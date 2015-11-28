@@ -1,0 +1,74 @@
+%% Plantilla para el documento de investigación, este sera el archivo maestro
+%% Por: Patricia Elizabeth Romero Rodríguez
+%% Fecha inicio : 5 de marzo de 2014,
+
+\documentclass[11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\inputencoding{utf8}
+
+\usepackage{graphicx}% Include figure files
+\graphicspath{ {figures/} }
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{latexsym}
+\usepackage{bm}% bold math
+\usepackage{makeidx}
+\usepackage{amsmath}
+\usepackage{multirow, array} % para las tablas
+\usepackage{float} % para usar [H], se tiene que instalar un componente adicional, (para que no cambie de lugar la figura)
+
+\usepackage{pdflscape}   %tablas en forma o la tablahorizontal
+\usepackage{amssymb}
+\usepackage{listings} % para los listados de código fuente
+
+\usepackage{anysize} % Permite emplear cualquier medida de márgenes.
+\marginsize{3cm}{2cm}{2cm}{3cm}% Controla los márgenes {izquierda}{derecha}{arriba}{abajo}.
+
+\parindent=1.5cm
+\parskip=1em
+
+\usepackage{longtable}
+
+\def\contentsname{ÍNDICE}
+\def\listfigurename{ÍNDICE DE FIGURAS}
+
+\newtheorem{ejem}{Listado}
+\newtheorem{teor}{Teorema}
+\newtheorem{defi}{Definición}
+
+\begin{document}
+
+
+\pagenumbering{roman} \setcounter{page}{1}
+
+%\include{dedicatoria}
+%\include{agradecimientos}
+
+%\include{resumen} % hacer la ficha resumen al final
+\tableofcontents
+
+\newpage
+\listoffigures
+%\newpage
+\listoftables
+
+\newpage
+\pagenumbering{arabic} \setcounter{page}{1}
+
+\include{cap1} % este capítulo se hará en base al perfil,
+\include{cap2} % lo que se llama el marco teórico, es un sistema de conceptos
+%\include{cap3}
+%\include{cap4}
+%\include{cap5}
+%\include{Pruebas y/o experimentación}
+%\include{Conclusiones}
+
+%\include{bibliografia}
+
+% Aquí empiezan los anexos
+%\appendix
+%\include{AnexoA} % manual de usuario
+%\include{AnexoB} % minigosario de términos
+%\include{evidencias}
+
+\end{document}
