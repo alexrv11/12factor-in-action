@@ -1,0 +1,10 @@
+document/*.log
+document/*.toc
+document/*.pdf
+document/*.aux
+document/*.lot
+document/*.lof
+document/icons/
+
+
+
