@@ -2,7 +2,7 @@
 \noindent Para el desarrollo de software se debe considera aspectos que influyen en el precio que debe pagar el usuario final como ser: Costo de desarrollar el software, Costo de mantenimiento, Costo del entorno de ejecución,  Costo por agregar nuevas características, el número de usuarios a utilizar el software, y el modelo de distribución que define como es que el usuario final va adquirir el producto y las nuevas versiones. 
 
 \section{Descripción del problema}
-\noindent En el negocio de desarrollo de software de propósito general o comercial, los costos de desarrollo, mantenimiento, tener un entornos de ejecución (servidor) por el lado del cliente y la distribución del producto son determinantes para definir el precio que el usuario pagara por el producto.
+\noindent En el negocio de desarrollo de software de propósito general o comercial, los costos de desarrollo, mantenimiento, tener  entornos de ejecución (servidor) por el lado del cliente y la distribución del producto son determinantes para definir el precio que el usuario pagara por el producto.
 
 \noindent A continuación se describe situaciones que afectan el incremento del precio del software:
 
@@ -20,7 +20,7 @@
 
 \subsection{Objetivo General}
 
-\noindent Plantear e Implementar un modelo de desarrollo de software y distribución de tal forma que se optimicen los recursos necesarios que pueden influir en el precio para los clientes. 
+\noindent Plantear un modelo de desarrollo de software de tal forma que se optimicen los recursos necesarios que pueden influir en el precio para los clientes. 
 
 
 \subsection{Objetivos Específicos}
@@ -50,7 +50,7 @@
 \end{itemize}
 
 \section{Diseño metodológico}
-\noindent La metodología 12factor está enfocada para el desarrollo de aplicaciones SaaS (Software as a Service). Esta metodología trata de que en el proceso de desarrollo del software se cumpla ciertos objetivos, los cuales son:
+\noindent La metodología 12factor está enfocada para el desarrollo de aplicaciones SaaS (Software as a Service). Esta metodología trata de que en el proceso de desarrollo del software se cumpla ciertos objetivos, los cuales son: [Adam Wiggins, 2012]
 
 \begin{itemize}
   \item Tener una configuración automatizada para los entornos de desarrollo, puesta en ejecución de la aplicación.
@@ -61,18 +61,18 @@
 
 \noindent Para lograr los objetivos citados anteriormente, la metodología 12factor se enfoca en los siguientes puntos: 
 \begin{itemize}
-  \item Código base
-  \item Dependencias
-  \item Configuración
-  \item Servicios externos que utiliza la aplicación
-  \item Construcción, puesta en ejecución, ejecución.
-  \item Procesos
-  \item Enlazamiento a puerto
-  \item Concurrencia
-  \item Robustez
-  \item Paridad entre los ambientes de desarrollo y producción.
-  \item Registro de eventos. Logs
-  \item Administración de procesos.
+  \item Código base: Versionamiento de codigo en un repositorio central.
+  \item Dependencias: Explícitamente declarar y aislar dependencias.
+  \item Configuración: La informacion de conexion a base de datos, servicios externos, credenciales, configuracion de entornos de ejecucion. 
+  \item Servicios externos que utiliza la aplicación: tener los servicios externos como recursos adjuntos que pueden ser cambiados en cualquier momento.
+  \item Construcción, lanzamiento, y puesta en ejecución: Tener las etapas de construccion, lanzamiento y puesta en ejecucion independientemente. 
+  \item Procesos: Poder ejecutar la aplicacion en un o mas procesos. 
+  \item Enlazamiento a puerto: los servicios de la aplicacion deben estar expuesto atraves de un puerto.
+  \item Concurrencia: Definir un modelo arquitectonico que soporte escalabilidad
+  \item Minimizar el tiempo de inicio y apagado de la aplicacion: Despliegue rapido de codigo o cambios de configuracion y la puesta en ejecucion en los ambientes de produccion.
+  \item Paridad entre los ambientes de desarrollo y producción: despliegue de cambios de un ambiente a otro sea ripido, al momento de trabajar en arreglar error o problemas que se dieron en produccion.
+  \item Registro de eventos. Logs: Nos permite tener un registro de lo sucedido cuando se presenta un problema de la aplicacion que esta disponible para los usuarios.
+  \item Administración de procesos: para incrementar las instancias de la aplicacion dependiendo a la frecuencia de usuarios esten usando la aplicacion al mismo tiempo, Proceso de migracion de bases de datos, ejecucion de script para la validacion de cambios en el codigo fuente.
 \end{itemize}
 
 \noindent La metodología AUP se enfoca en el desarrollo de aplicaciones usando técnicas agiles como ser Desarrollo dirigido por pruebas,  Modelo Ágil, Gestión de Cambios Ágil.
@@ -80,7 +80,7 @@
 \noindent La metodología AUP define las siguientes etapas:
 
 \begin{itemize}
-  \item \textit{Incepción:} Identificación del alcance del proyecto, definir una potencial arquitectura.
+  \item \textit{Concepción:} Identificación del alcance del proyecto, definir una potencial arquitectura.
   \item \textit{Elaboración:} Proveer una arquitectura más clara del software.
   \item \textit{Construcción:} Implementación del software basados en las características de prioridad alta para los inversionistas. 
   \item \textit{Transición:} La validación de software y la puesta en ejecución en los ambientes de producción.
@@ -100,21 +100,21 @@
 \begin{figure}[ht]
   \centering
   \includegraphics[width=15cm, height=7cm]{chapter1-aup-stages.png}
-  \caption{Ciclo de vida Del Proceso Unificado Agil [CITATION Sco14 \l 1033 ]}  
+  \caption{Aplicación de las disciplinas en las fases del Proceso Unificado Agil AUP [Elaboracion propia ]}  
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=15cm, height=7cm]{chapter1-model-12factor-aup.png}
-  \caption{12factor introducida en las disciplinas de AUP (Elaboración propia)}  
+  \includegraphics[width=15cm, height=9cm]{chapter1-model-12factor-aup.png}
+  \caption{12factor introducida en las disciplinas de AUP en las diferentes fases (Elaboración propia)}  
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=15cm, height=7cm]{chapter1-model-process-development.png}
-  \caption{Automatizacion de procesos, desde la preparacion de ambientes de desarrollo, validacion de cambios en el codigo base y despliegue de los cambios en los ambientes de ejecucion (Elaboración propia)}  
+  \includegraphics[width=15cm, height=6cm]{chapter1-model-process-development.png}
+  \caption{Automatización de procesos, desde la preparación de ambientes de desarrollo, validacion de cambios en el codigo base y despliegue de los cambios en los ambientes de ejecucion (Elaboración propia)}  
 \end{figure}
-\noindent Tener tareas automatizadas en el proceso de desarrollo del software como ser: preparacion de entornos de desarrollo para nuevos desarrolladores, validacion de nuevas caracteristicas o arreglo de errores, introducida al codigo base. Verificando si se esta siguiendo el codigo estandard definida por el equipo de desarrollo, ejecucion de test unitarios y de integracion, generacion de ejecutables y la puesta en ejecucion. Aceleran el proceso desarrollo del software y aseguran que los cambios introduciodos al codigo base, sean de incremento de tal forma que las nuevas caracteristicas no afecten a las anteriores.
+\noindent Tener tareas automatizadas en el proceso de desarrollo del software como ser: preparación de entornos de desarrollo para nuevos desarrolladores, validación de nuevas caracteristicas o arreglo de errores, introducida al codigo base. Verificando si se esta siguiendo el codigo estandard definida por el equipo de desarrollo, ejecución de test unitarios y de integracion, generacion de ejecutables y la puesta en ejecucion. Aceleran el proceso desarrollo del software y aseguran que los cambios introduciodos al codigo base, sean de incremento de tal forma que las nuevas caracteristicas no afecten a las anteriores.
 
 
 

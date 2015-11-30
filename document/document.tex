@@ -6,7 +6,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \inputencoding{utf8}
-
+\usepackage{ragged2e}
 \usepackage{graphicx}% Include figure files
 \graphicspath{ {figures/} }
 \usepackage{dcolumn}% Align table columns on decimal point
@@ -38,7 +38,7 @@
 
 \begin{document}
 
-
+\justify
 \pagenumbering{roman} \setcounter{page}{1}
 
 %\include{dedicatoria}
@@ -55,7 +55,7 @@
 \newpage
 \pagenumbering{arabic} \setcounter{page}{1}
 
-\include{cap1} % este capítulo se hará en base al perfil,
+%\include{cap1} % este capítulo se hará en base al perfil,
 \include{cap2} % lo que se llama el marco teórico, es un sistema de conceptos
 %\include{cap3}
 %\include{cap4}
@@ -63,7 +63,7 @@
 %\include{Pruebas y/o experimentación}
 %\include{Conclusiones}
 
-%\include{bibliografia}
+\include{bibliografia}
 
 % Aquí empiezan los anexos
 %\appendix
