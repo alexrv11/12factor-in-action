@@ -1,11 +1,11 @@
-\chapter{Marco Teorico}
+\chapter{Factores a considerar en el desarrollo de software}
 \noindent En este capítulo se pretende definir, los conceptos a utilizar en el proyecto, que mas resalten y que de alguna forma es importante recalcar.
 
 
 \section{Proceso de desarrollo de Software}
 \noindent El proceso de desarrollo define un marco de trabajo, donde se tiene como entrada las necesidades o requerimientos de los clientes y dentro del proceso se tiene un conjunto de actividades que nos permiten llegar a construir el producto.
 
-\noindent Entre las principales actividades que se tiene en el proceso de desarrollo son:[Sommerville, 2005]
+\noindent Entre las principales actividades que se tiene en el proceso de desarrollo segun [Sommerville, 2005] son:
 \begin{itemize}
   \item Especificación del Software: Donde los clientes y personas involucradas definen los requerimientos y sus restricciones del  Software.
   \item Desarrollo del Software: Donde el software se diseña y construye.
@@ -23,10 +23,10 @@
  
 \section{Modelo del Proceso de Desarrollo de software}
 \noindent El Modelo del proceso de desarrollo de software es una representación del proceso que se quiere aplicar para el desarrollo del software. En el modelo se define y se puede ver claramente el flujo de trabajo e interacción de las personas involucradas en cada actividad o etapa dentro del desarrollo de software.
-\noindent Los Modelos pueden incluir actividades que son parte de los procesos y productos de software y el papel de las personas involucradas en la ingeniería del software. Algunos de los modelos que se pueden tener son:[Sommerville, 2005]
+\noindent Los Modelos pueden incluir actividades que son parte de los procesos y productos de software y el papel de las personas involucradas en la ingeniería del software. Algunos de los modelos que se pueden tener segun [Sommerville, 2005] son:
 \begin{itemize}
 \item Un modelo del flujo de trabajo: En este modelo se tiene el flujo de actividades humanas en el proceso junto a sus entradas, salidas y dependencias.
-\item Un modelo del flujo de datos o actividades:En este modelo se tiene el conjunto de actividades y el tratamiento de datos que realiza cada actividad.
+\item Un modelo del flujo de datos o actividades: En este modelo se tiene el conjunto de actividades y el tratamiento de datos que realiza cada actividad.
 \item Un modelo de roles:En este modelo se tiene el conjunto de roles y responsabilidades de las personas involucradas en el proceso de desarrollo.
 \end{itemize}
 
@@ -40,19 +40,19 @@ El tipo de software que se quiere desarrollar: aplicación de escritorio, plugin
 \noindent Se debe tener mucho cuidado en adaptar un modelo, no se puede forzar el uso del modelo dentro el desarrollo del software.   
 
 \section{Confiabilidad, Escalabilidad y Mantenimiento}
-\noindent Los productos de software tienen un cierto número de atributos asociados que reflejan la calidad de ese software. Estos atributos no están directamente asociados con lo que el software hace, Más bien, reflejan su comportamiento durante la ejecución, la estructura y organización del código fuente y la documentación asociada [Sommerville, 2005].
+\noindent Los productos de software segun [Martin Kleppmann, 2014] tienen un cierto número de atributos asociados que reflejan la calidad de ese software. Estos atributos no están directamente asociados con lo que el software hace, Más bien, reflejan su comportamiento durante la ejecución, la estructura y organización del código fuente y la documentación asociada.
 
 \subsection{Confiabilidad}
-\noindent La confiabilidad se da en las interacciones que realiza el usuario final en la aplicación y que la aplicación pueda responder a las expectativas del usuario. La aplicación tiene que ser tolerante a fallos o a posibles errores que pueda cometer el usuario, debe poder responder de forma adecuada a situaciones inesperadas. El tiempo de respuesta debe ser lo más razonablemente posible. La seguridad en el acceso a información de los usuarios debe ser controlada, de tal forma que el usuario sepa que su información está segura y que las personas autorizadas puedan entrar [Martin Kleppmann, 2014].
+\noindent La confiabilidad se da en las interacciones que realiza el usuario final en la aplicación y que la aplicación pueda responder a las expectativas del usuario. La aplicación tiene que ser tolerante a fallos o a posibles errores que pueda cometer el usuario, debe poder responder de forma adecuada a situaciones inesperadas. El tiempo de respuesta debe ser lo más razonablemente posible. La seguridad en el acceso a información de los usuarios debe ser controlada, de tal forma que el usuario sepa que su información está segura y que las personas autorizadas puedan entrar.
 
 
 \subsection{Escalabilidad}
-\noindent La escalabilidad es la habilidad del software desarrollado, de poder adaptarse a incrementos de carga. Para decir que un software es escalable, se debe analizar su comportamiento con cierto número de usuarios que utilizan el software de forma simultánea e ir incrementando el número de usuarios para conocer la variación que se da en cuanto a los tiempos de respuesta y como se comporta el software en las diferentes situaciones  [Martin Kleppmann, 2014].
+\noindent La escalabilidad es la habilidad del software desarrollado, de poder adaptarse a incrementos de carga. Para decir que un software es escalable, se debe analizar su comportamiento con cierto número de usuarios que utilizan el software de forma simultánea e ir incrementando el número de usuarios para conocer la variación que se da en cuanto a los tiempos de respuesta y como se comporta el software en las diferentes situaciones.
 \noindent Para poder tener una aplicación escalable, se debe definir el patrón de arquitectura a utilizar. La interacción de las capas definidas en el software, deben ser lo más vertical posible. Se debe tener un balance de carga que optimiza el uso de recursos de hardware. 
 
 \subsection{Mantenimiento}
 \noindent El costo del software no se refleja al inicio de desarrollo del software, sino en la etapa de mantenimiento, arreglando errores, manteniendo el software en operación, investigando fallas, adaptando el software a nuevas plataformas tecnológicas, pagando deudas técnicas y agregando nuevas características.
-Para reducir el costo y la dificultad de mantenimiento de un software, se debe tomar particular atención a tres principios de diseño para un software[Martin Kleppmann, 2014].
+Para reducir el costo y la dificultad de mantenimiento de un software, se debe tomar particular atención a tres principios de diseño para un software.
 \begin{itemize}
 \item Operabilidad: la puesta en ejecución, monitorio, manejo de logs deben de lo más fácil posible para la administración operativa del equipo.
 \item Simplicidad: Los nuevos desarrolladores deberían de poder integrarse al proyecto y comprenderlo sin complicaciones.
@@ -60,7 +60,10 @@ Para reducir el costo y la dificultad de mantenimiento de un software, se debe t
 \end{itemize}
 
 \section{Integración Continua}
-\noindent in progress
+\noindent Una definicion de Integracion Continua por [Martin Fowler, 2006] \"Integración Continua es una buena práctica en el desarrollo de software, donde los miembros del equipo integran su trabajo con frecuencia, lo cual conduce a múltiples integraciones por dia\". Cada integración se verifica por una construcción automatizada que valida los cambios realizados a través de criterios de validación como ser:
+- Ejecución de pruebas automatizados
+- Código estándar
+- porcentaje de Cobertura de las pruebas unitarias en el código fuente.
 
 \section{Distribución del software}
 \noindent in progress
