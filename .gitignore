@@ -4,5 +4,6 @@ document/*.pdf
 document/*.aux
 document/*.lot
 document/*.lof
+document/*.out
 document/icons/
 document/figures/design graphic/
