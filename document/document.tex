@@ -4,7 +4,7 @@
 
 \documentclass[11pt]{report}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[spanish,es-tabla]{babel}
 \inputencoding{utf8}
 \usepackage{ragged2e}
 \usepackage{graphicx}% Include figure files
@@ -21,6 +21,7 @@
 \usepackage{amssymb}
 \usepackage{listings} % para los listados de código fuente
 \usepackage{anysize} % Permite emplear cualquier medida de márgenes.
+\usepackage[table]{xcolor} % table colors
 \marginsize{3cm}{2cm}{2cm}{3cm}% Controla los márgenes {izquierda}{derecha}{arriba}{abajo}.
 
 \parindent=1.5cm
@@ -34,7 +35,9 @@
 \newtheorem{ejem}{Listado}
 \newtheorem{teor}{Teorema}
 \newtheorem{defi}{Definición}
-
+\renewcommand{\arraystretch}{1.5} %space between rows in the table
+\definecolor{indigo-dark}{HTML}{1A237E} %primary color title in the table
+\definecolor{indigo-light}{HTML}{9FA8DA} %secondary color title in the table
 \begin{document}
 
 \justify
@@ -46,17 +49,17 @@
 %\include{resumen} % hacer la ficha resumen al final
 \tableofcontents
 
-\newpage
-\listoffigures
 %\newpage
-\listoftables
+%\listoffigures
+%\newpage
+%\listoftables
 
-\newpage
+%\newpage
 \pagenumbering{arabic} \setcounter{page}{1}
 
 %\include{cap1} % este capítulo se hará en base al perfil,
 %\include{cap2} % lo que se llama el marco teórico, es un sistema de conceptos
-%\include{cap3}
+\include{cap3}
 %\include{cap4}
 %\include{cap5}
 %\include{Pruebas y/o experimentación}

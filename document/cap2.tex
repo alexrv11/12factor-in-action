@@ -1,5 +1,7 @@
-\chapter{Factores a considerar en el desarrollo de software}
-\noindent El desarrollo de software puede tener altos niveles de complejidad, mucho va ha depender del tipo de software que se quiere desarrollar, el modelo de negocio al cual está enfocado, la precisión en las funcionalidades del software, los tiempos de respuesta, la usabilidad para los usuarios finales.
+\chapter{Marco teórico}
+\noindent En el presente capítulo se conceptualizan términos relacionados al Desarrollo de software y que irán utilizando en los capítulos posteriores.
+
+\section{Ingeniería de software}
 \noindent La ingeniería de software está enfocado a desarrollo de software, por lo cual es necesario tomarlo en cuenta. Según [Roger S. Pressman, 2010] “La ingeniería de software abarca un proceso, una colección de métodos (práctica) y una gran variedad de herramientas que permiten a los profesionales construir software de alta calidad.”
 
 
@@ -11,7 +13,7 @@
   \item Especificación del Software: Donde los clientes y personas involucradas definen los requerimientos y sus restricciones del  Software.
   \item Desarrollo del Software: Donde el software se diseña y construye.
   \item Validación del Software: Donde se valida de que el software desarrollado cumple con las exigencias y expectativas del cliente.
-  \item Evolución del Software: Donde el software tiene a cambiar y adaptarse a los nuevos requerimientos del cliente.
+  \item Evolución del Software: Donde el software tiende a cambiar y adaptarse a los nuevos requerimientos del cliente.
 \end{itemize}
 
 \begin{figure}[ht]
@@ -101,4 +103,22 @@ Para reducir el costo y la dificultad de mantenimiento de un software, se debe t
 \end{itemize}
 
 \section{Ambientes de ejecución}
-\noindent in progress
+\noindent Los entornos de ejecución para producción, son muy importantes para la ejecución del producto software. Con buenas características de hardware, los servidores pueden mejorar el rendimiento y tiempos de respuesta de las interacciones de los usuarios con el software. Se puede tener diferentes opciones para tener ambientes de ejecución.
+
+\subsection{Servidores Propios}
+\noindent La ventaja de tener servidores propios, la administración es de forma directa. Tener servidores propios hacen que se eleven los costos del producto de las siguientes maneras:
+\begin{itemize}
+\item Costos de instalación del servidor, donde se ejecuta el software para producción. Dependiendo a las características de hardware y el rendimiento que se quiere tener este costo puede elevarse. En el caso de que es un nuevo software y se desconoce el crecimiento de usuarios con el tiempo, se puede dar que se instala un servidor con buenas características de hardware pero la inversión no rinde con el número de usuarios que podrían ser menos de los planificado. Se puede tener el otro caso, se invierte en lo mínimo en características de hardware para que inicie el software. pero con el tiempo el número de usuarios incrementa de tal forma que es necesario incrementar las características de hardware lo cual hace que se invierta nuevamente en hardware.
+\item Costos de ambientes donde se instalará los servidores, lo cual ocupa un espacio.
+\item Costos de mantenimiento y monitoreo de los servidores. 
+\end{itemize}
+
+\subsection{Servicios en la Nube} 
+\noindent La tendencia de usar servicios en la nube, que proporcionen entornos virtuales de ejecución con las características necesarias es una buena opción con las siguientes ventajas:
+\begin{itemize}
+\item los servicios en la nube que proporcionan entornos de ejecución dan la opción de planes de servicios. Si la aplicación está iniciando y se desconoce el crecimiento en el mercado, se puede elegir un plan mínimo para iniciar. Con el tiempo se puede analizar y ver si es necesario incrementar los rendimientos en cuanto al número de usuarios, lo único que se haria seria cambiar de plan.
+\item La administración de los entornos de ejecución se reducen a monitorear la aplicación. El rendimiento que se tiene respecto a las interacciones de los usuarios.
+\end{itemize}
+
+\noindent En este capítulo se enfoca en enfatizar los factores que se deben considerar en el desarrollo de software hasta la puesta en producción del producto desarrollado. Al inicio del desarrollo se debe conocer las expectativas que tienen los clientes respecto al producto que se quiere desarrollar, de tal forma que el equipo de desarrollo direccione lo necesario para cumplir con las expectativas. La comunicación cliente - equipo de desarrollo debe ser lo más fluida posible.
+\noindent El proceso de desarrollo debe iniciar con lo básico necesario, pero no debe ser impuesta sino debe ir adaptándose según las necesidades que se van teniendo en el transcurso del desarrollo. 
