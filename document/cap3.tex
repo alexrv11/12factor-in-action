@@ -1,5 +1,5 @@
 \chapter{Iniciación}
-\noindent En el presente capítulo se pretende describir el caso de estudio, los requerimientos funcionales, casos de uso y aspectos tecnicos.
+\noindent En el presente capítulo se pretende describir el caso de estudio, los requerimientos funcionales, requerimientos no funcionales, perfiles de usuarios y la arquitectura base de la aplicación SaaS - Software as a Service.
 
 \noindent El objetivo de esta fase en el Proceso Unificado Ágil, es obtener una máxima compresión cliente - equipo de desarrollo. Los requerimientos funcionales, el alcance del software a desarrollar (criterios de aceptación).
 
@@ -128,7 +128,104 @@ Para conocer el negocio y las respectivas actividades que realizan, se entrevist
 \end{figure}
 \end{itemize}
 \section{Requerimientos no funcionales}
-\section{Viabilidad Técnica y Económica}
-\section{Arquitectura del Sistema}
-\section{Planificación del Sistema a desarrollar}
+\noindent Según la definición de [Swebok, 2014], Los requerimientos no funcionales algunas veces son conocidos como las restricciones del proyecto o requerimientos de calidad. Los requerimientos no funcionales pueden ser clasificados en requerimientos de rendimiento, mantenimiento, seguridad, fiabilidad, interoperabilidad y muchos otros.
+
+\noindent Los requerimientos no funcionales que se considera en el proyecto estan agrupados de la siguiente manera: atributos del Software, consideraciones para los entornos de ejecución y la tecnología a utilizar.
+
+\subsection{Atributos de Software}
+\noindent Según [Sommerville, 2005], los productos de software tienen un cierto número de atributos que reflejan la calidad del software. Estos atributos reflejan su comportamiento durante su ejecución y la estructura organizacional del código fuente y la documentación asociada.
+\noindent El software a desarrollar deberá enfocarse en los siguientes atributos:
+\begin{itemize}
+\item \textbf{Rendimiento}: El rendimiento del software por cada acción o petición que realiza un usuario dentro del sistema debe cumplir el siguiente criterio: el tiempo de respuesta deberá ser menor a 5 segundos.
+\item \textbf{Concurrencia}: El software debe estar diseñado para soportar múltiples usuarios que estén usando el software al mismo tiempo.
+\item \textbf{Escalabilidad}: El software debe ser escalable de acuerdo al siguiente criterio. El número de usuarios incrementa 100 a 1000 usuarios, entonces se puede incrementar los recursos de hardware y el rendimiento del software deberá ser casi similar soportando 1000 usuarios a soportar 100 usuarios con menos recursos de hardware. 
+\item \textbf{Mantenimiento}: El software debe ser mantenible considerando los siguientes criterios: comprensión fácil de la estructura del código (diseño arquitectónico), debidamente documentado en código fuente donde se requiera y documentos técnicos adicionales si fuera necesarios y automatización de tareas repetitivas en el proceso de desarrollo.  
+\end{itemize}
+
+\subsection{Tecnología}
+\noindent La tecnología a utilizar para el desarrollo del proyecto es la siguiente:
+
+\begin{table}[H]
+	\centering
+    \begin{tabular}{ |P{4cm}|p{10cm}| }
+	  \hline
+	  \rowcolor{indigo-dark} \multicolumn{2}{|c|}{ \textcolor{white}{\textbf{Tecnología}}} \\
+	  \hline
+	  \rowcolor{indigo-light} \textbf{Nombre} & \centering \textbf{Descripción}
+	  \tabularnewline \hline
+	  Entornos de Ejecución en Heroku & Heroku es una plataforma en la nube basado en un sistema de contenedores, con servicios de datos integrados y un potente ecosistema, para implementar y ejecutar aplicaciones modernas.
+	  \tabularnewline \hline
+	  Repositorio de código fuente en Github & Github es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git. 
+	  \tabularnewline \hline
+	  Plataforma de desarrollo en Nodejs & Nodejs es una plataforma de desarrollo que utiliza como lenguaje de programación Javascript y define un modelo asíncrono manejado por eventos lo cual nos permite crear aplicaciones escalables. 
+	  \tabularnewline \hline
+	  Base de datos en MongoDB & MongoDB es un manejador de base de datos NoSQL orientado a documentos. 
+	  \tabularnewline \hline
+	Integración Continua con Travis CI & Travis Ci es un servicio en la nube para realizar integración continua. Se puede sincronizar con los repositorios en Github  y ejecutarse apenas se modifique algo en el repositorio, también se integra a Heroku para hacer los desplazamientos de nuevos cambios en el código a los entornos de ejecución. 
+	  \tabularnewline \hline
+	\end{tabular}
+	\caption{Tecnología a utilizar en el desarrollo del proyecto}
+\end{table}
+
+\section{Arquitectura del Software}
+\noindent El sistema estará compuesto por dos subsistemas, la aplicación web y el servicio web. Para el almacenamiento de datos se aplicará una arquitectura de datos multi tenant. El servicio web es el medio para acceder a los datos y realizar operaciones. La aplicación web consume los recursos que le proporciona el servicio web.
+
+\noindent A continuación se tiene una descripción gráfica de la Arquitectura a implementar. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=15cm, height=5cm]{chapter3-architecture-of-the-project.png}
+  \caption{Arquitectura aplicación SaaS - empresas de pedidos [Elaboración propia]}  
+\end{figure}
+   
+\subsection{Aplicación Web}
+\noindent La aplicación web es un cliente que consume recursos que le proporciona el servicio web. La forma como va a mostrar la información estará limitado por los recursos que le proporciona el servicio web.
+
+\noindent A continuación se presenta la arquitectura que tendrá la aplicación web.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, height=4cm]{chapter3-architecture-web-app.png}
+  \caption{Arquitectura de la aplicación web [Elaboración propia]}  
+\end{figure} 
+
+\noindent Los \textbf{Controladores} se encargan de proveer información a las vistas para lo cual hacen uso de los \textbf{Servicios} que su finalidad es conectarse con el servicio web y consumir los recursos que están disponibles.
+
+\subsection{Servicio Web}
+\noindent Para la implementación de los servicios web se realizará bajo la tecnología REST, según [Richardson \& Ruby, 2007] REST - REpresentational State Transfer, es un tipo de arquitectura que se apoya en el estándar HTTP. REST nos permite crear servicios compatibles con cualquier dispositivo o cliente HTTP.
+
+\noindent En un servicio REST, se define los recursos accesibles por identificadores y en los cuales se realizará las operaciones como ser (Agregar, Actualizar, Eliminar u Obtener)
+
+\noindent La arquitectura para los servicios web estará conformada por capas, donde cada capa sólo conoce lo que hace la capa inmediatamente inferior. Cada capa encapsula su implementación y ofrece una interfaz para que la capa superior pueda comunicarse.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, height=4cm]{chapter3-architecture-web-service.png}
+  \caption{Arquitectura del servicio web [Elaboración propia]}  
+\end{figure}
+ \noindent En la \textbf{capa de acceso} se define todos los recursos que proporcionará el servicio web. Un URI - Uniform Resource Identifier, nos permiten identificar de forma única un recurso.
+
+\noindent En la \textbf{capa de modelo} se definirá la las reglas de negocio y los esquemas de la base de datos. 
+
+\subsection{Arquitectura de Datos Multi-Tenant}
+\noindent Una prioridad alta para una aplicación SaaS, es definir la arquitectura de datos para almacenar la información de los diferentes clientes que usen la aplicación. el almacenamiento de datos debe ser robusta y segura lo suficiente para que los clientes puedan ceder el control de los datos empresariales a la aplicación SaaS.
+
+\noindent En el siguiente articulo [Multi Tenant, msdn 2006] habla sobre tres estrategias para implementar una arquitectura de Datos, tomando dos extremos: Isolar datos y compartir datos.
+
+\noindent Las estrategias para implementar una arquitectura de datos son las siguientes:
+\begin{itemize}
+\item Una base de datos para cada cliente 
+\item Una base de datos única pero con diferentes esquemas para cada cliente
+\item Una única base de datos para todos los clientes
+\end{itemize}
+
+\noindent Para el desarrollo de la aplicación SaaS se utilizara la estrategia textbf{una base de datos para todos los clientes} con las siguientes restricciones:
+\begin{itemize}
+\item Para almacenar la información se deberá diferenciar con un código único para cada cliente empresa.
+\item La seguridad al acceso de información debe ser controlada, de tal forma que una empresa solo pueda ingresar a la información relacionada a esa empresa.
+\end{itemize}
+
+\noindent La ventajas de tener una base de datos para todos los clientes son los siguientes:
+\begin{itemize}
+\item Minimizar el costo inicial en cuanto a recursos de hardware. una base de datos se crea con un mínimo de memoria en disco duro y en los planes de plataformas en la nube hay un costo por capacidad de almacenamiento.
+\item Minimizar el costo de mantenimiento o administración las bases de datos en cuanto a sacar respaldo de datos y restauración. Como se tiene solo una base de datos se reduce este costo y la complejidad de mantenimiento.  
+\end{itemize} 
+
 
