@@ -58,6 +58,12 @@
   \caption{Diagrama de clases módulo de pedidos [Elaboración propia]}  
 \end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=22cm, height=15cm]{chapter4-customer-request-module-view-design.png}
+  \caption{Diseño de la vista módulo de pedidos [Elaboración propia]}  
+\end{figure}
+
 \subsection{Módulo de Transacciones}
 El módulo de transacciones tiene como objetivo resolver los siguientes requerimientos:
 \begin{itemize}
@@ -82,7 +88,17 @@ El módulo de Usuarios tiene como objetivo resolver los siguientes requerimiento
 \item Permitir crear solo una cuenta administrador por empresa (Req. \#14).
 \item Permitir cambiar contraseña (Req. \#15).
 \end{itemize}
+
 \section{Diseño de la base de datos}
+\noindent Para el diseño de la base de datos se ha considerado las sugerencias descritas en [mongoDB data model design, 2014] para la elaboración de un modelo de datos en mongodb donde se puede tener modelos de datos embebidos y/o modelo de datos normalizados.
+
+\noindent La estructura de una base de datos en mongodb está compuesta por las colecciones (tablas sql). En una colecciones se almacenan los documentos (filas sql), los documentos son objetos en formato json que almacenan la información en clave-valor.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=14cm, height=8cm]{chapter4-database-design.png}
+  \caption{Colecciones de la base de datos [Elaboración propia]}  
+\end{figure}
 
 \section{Entorno de Desarrollo}
 
