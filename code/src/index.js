@@ -6,7 +6,7 @@ app.set('port', process.env.PORT || 3010);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//require('./client')(app);
+require('./client')(app);
 require('./server')(app);
 
 app.listen(app.get('port'), function() {
