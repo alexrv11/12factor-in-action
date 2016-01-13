@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+- '0.12'
+before_install:
+- npm install -g grunt-cli
+- npm install -g bower
+install:
+- npm install
+- bower install
+script:
+- grunt build
+- npm test
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  api_key:
+    master:
+      secure: "Hz6+XZPjP2OcrJbe+3GUHZakooSoukCg7iJH4EMRUe9+ErAtmHgm+E/FJ/e1Q8PMj7ZE9KpOkrhsqsuJyfuAVn4vGpVdVBVxQooNKgjbd5Hq2XuQEJrmfKXP3algQ+ExZg8GBuqxRI2nMupsaJl8tqIge9FrPjZ2UhM/4kD21gNvGzNUH0TYXtBBO5VSCozjnx5/64iTmnCYWXx1q0lW62vXDL2RLH9D11Bm5Cc3OZSOsDvbY5mrF+ez3dsUtJ37cbegOhWlKjoha128BHGlTDkjRZLC7Pe5AITAUAwdv9vyr5/NTjA0Qm7N2cQbJU9UUYLKjMmAst7HKJWh/Ysa2GVFJWR5Z0a7m8XZsFD1w6Kyi/4urTs1svcdJg/yFpVRPRf1BjtWtE7yjzlijbv1b3i8NPoln+1PSTzIFasnilaLdIg4Oqlvrt8/+/MOAOSFx6kUQ/vvMC5jTLX3kGlFdJH9W8k3zjvNJpDOOVHW3QHM2htgFq9GG/iNrbDQ7zQOJIhPTopKxDDS5OY4S4utdXRNz9UJLKMvr7I07uWsjgVrnQycCSigF1CCEZ1iyNPGK4+NUYxm6v1tBoQ2NTxxZox83D/MjUsseiYRH5IppG1rWsBnnUdsRCZWmqtZwG5TkngWUsnYKTPYV/zxwSOG3mE+p6ACON05RMyd7MODq50="
+    production:
+      secure: "Km4KZruPks+fyy+6Pp+dNlLRQz2nIaP1Xwb2Pa4GoNtXeYwtQc1WG/+fsiDQgOMBcMvM1GIFlIJQ5/tM0OznMXnP3nPPm2/VcQbmqWfNu6X3j6LLv3PE5ozOzbyy6u7hzDGAr6+Net5W1lQ0xU3or5F7+CDqE9vXqMg/m6o5L08NhIavWaQwRQK6qjMEKDC8EqfLYAf+8sBgJbXbJ2A+o50x0N6N6iUzkVB/zy5VdvNMtn8s7eQqq/5xv92lE0oVjgq3sxmBPyjgdSW4Gvg6SHMCo2BDMi99oT+EsVGQjO1KlzJHyRtSVoddzOxM0ByTVtK78d/lDVEYt/leYDFVj+UZpCL6HCuNpR3UZgUMIKeIOj/7dLt+gizercie6WFvEZJza0rI8pPf71yrfv+Y/mD942Mwm0AlxoBGYPK9P++WQZ4RxezIFQ4ZeBTpc0W+L8ompOW+k+DJi7YPkWI2U6ofKAj+3OSV7e2A63c7iUpUZfODnzIVcp4FbRhskQdIrRfWzsWh1xBXzpXwJtGhIivvpkeLrp1eK56oPLslbLBFKaa5JiDbeiddS/HBnfrBvUSZ1DNVQ6EhKgDWWSG4GJL1G1ZBNGeXtl+fYlWpc3d0nwP3CT6y0ZvbHp8yMrTRB7lpFFG3Ai1v9bXpsnzHwSq6BuqZDcqJq49tWA7Rwx8="
+  app:
+    master: sudokuz
+    production: sudokuz-prod
+  run:
+  - restart
+

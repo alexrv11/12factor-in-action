@@ -1,0 +1,22 @@
+
+## Temporary files
+*.so
+*.log
+*.out
+*~
+*.swp
+*.DS_Store
+*.lock
+
+node_modules/
+src/client/assets/libs/
+
+## Grunt files
+*.npm-debug.log
+
+
+## webstorm dependencies
+.idea/
+
+## netbeans dependencies
+nbproject/
