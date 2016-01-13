@@ -13,7 +13,10 @@ module.exports = function(app) {
     });
 	
 	var models = require('./models');
-	app.set('models', models);	
+	var services = require('./services');
+	app.set('models', models);
+	app.set('services', services);	
+
     //load api URI's
     var path = require('path');
     var fs = require('fs');
@@ -23,7 +26,6 @@ module.exports = function(app) {
     var files = fs.readdirSync(routesPath);
 	var apiRoute = util.format('/api');
     for (var i = files.length - 1; i >= 0; i--) {
-		console.log('dir:', files[i]);
         var fileName = files[i];
 		var moduleName = util.format('./%s/%s', routePath, fileName); 	
         var api = require(moduleName)(app);
