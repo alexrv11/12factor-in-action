@@ -7,3 +7,4 @@ document/*.lof
 document/*.out
 document/icons/
 document/figures/design graphic/
+.idea

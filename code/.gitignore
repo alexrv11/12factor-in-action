@@ -20,3 +20,7 @@ src/client/assets/libs/
 
 ## netbeans dependencies
 nbproject/
+
+
+## bower components
+bower_components/

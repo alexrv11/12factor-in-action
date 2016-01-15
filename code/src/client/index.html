@@ -1,9 +1,42 @@
 <!DOCTYPE html>
-<html>
-	<head> 
-		<title></title>
+<html ng-app="FactorInAction">
+	<head>
+		<title>Factor in Action</title>
+		<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="assets/css/main.css">
 	</head>
-	<body>
-		<h1>Welcome</h1>
+	<body ng-controller="AppController">
+
+		<nav class="main row">
+			<div class="logo col-md-9">logo</div>
+			<div class="col-md-2">
+				Uner name
+				<span class="glyphicon glyphicon-menu-down"></span>
+			</div>
+			<div class="col-md-1"><a>Exit</a></div>
+		</nav>
+
+		<div class="container-fluid row">
+			<nav class="menu col-md-2">
+				<ul class="nav nav-pills nav-stacked">
+					<li role="presentation" class="active"><a>Orders</a></li>
+					<li role="presentation"><a>Transaction</a></li>
+					<li role="presentation"><a>MotoTaxis</a></li>
+				</ul>
+			</nav>
+
+			<ng-viewport></ng-viewport>
+		</div>
+
+		<script src="../../bower_components/angular/angular.min.js"></script>
+		<script src="../../bower_components/angular-new-router/dist/router.es5.min.js"></script>
+		<script src="../../bower_components/angular-resource/angular-resource.min.js"></script>
+		<script src="app/app.module.js"></script>
+		<script src="app/app.router.js"></script>
+		<script src="app/app.constant.js"></script>
+		<script src="components/order/order.controller.js"></script>
+		<script src="components/order/order.service.js"></script>
+		<script src="components/order/order.constant.js"></script>
+
 	</body>
 </html>
