@@ -1,5 +1,5 @@
 {
-  "name": "Sudokuz",
+  "name": "12factor-in-action",
   "version": "1.0.0",
   "main": "path/to/main.css",
   "ignore": [
@@ -9,6 +9,7 @@
   "dependencies": {
     "angular": "~1.4.0",
     "bootstrap": "~3.3.4",
-    "components-font-awesome": "~4.3.0"
+    "angular-new-router": "~0.5.3",
+    "angular-resource": "~1.4.8"
   }
 }

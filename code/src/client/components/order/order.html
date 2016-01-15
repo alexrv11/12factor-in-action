@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <form name="orderForm">
+        <div class="col-sm-3 form-group">
+            <input type="text" name="clientName" class="form-control"
+                   ng-model="order.item.clientName" placeholder="client name" required>
+        </div>
+
+        <div class="col-sm-3 form-group">
+            <input type="text" name="nit" class="form-control"
+                   ng-model="order.item.nit" placeholder="NIT" required>
+        </div>
+
+        <div class="col-sm-3 form-group">
+            <input type="number" name="phone" class="form-control"
+                   ng-model="order.item.phone" placeholder="phone" required>
+        </div>
+
+        <div class="col-sm-3 form-group">
+            <input type="text" name="location" class="form-control"
+                   ng-model="order.item.location" placeholder="location" required>
+        </div>
+
+        <div class="col-sm-3 form-group">
+            <textarea class="from-control" name="description"
+                      ng-model="order.item.description" placeholder="description" required></textarea>
+        </div>
+        <div class="col-sm-3 form-group">
+             <button class="btn btn-primary" ng-click="order.save()" ng-disabled="orderForm.$invalid">Register</button>
+        </div>
+    </form>
+
+    <table class="table ">
+        <thead>
+            <tr>
+                <th>Client</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Assigned</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in order.items">
+                <td>{{ item.clientName }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.location }}</td>
+                <td ng-click="">none</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
