@@ -5,10 +5,10 @@ module.exports = function (app) {
 	var services = app.get('services');
 	var customerRequestService = services.getService('customer-requests')(app);
 
-	router.get(api, function(req, res, next) {
+	router.get(api, function(req, res) {
 		var options = req.query;
-		customerRequestService.getCustomerRequests(options, function (err, result) {
-  			if (err) {
+		customerRequestService.getCustomerRequests(options, function (error, result) {
+  			if (error) {
 				res.send(error);
 			} else {
 				res.send(result);
