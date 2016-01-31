@@ -4,11 +4,19 @@ node_js:
 before_install:
 - npm install -g grunt-cli
 - npm install -g bower
+- npm install -g codeclimate-test-reporter
+- npm install -g istanbul
 - cd code/
 install:
 - npm install
 - bower install
 script:
 - grunt build
+after_script:
+- codeclimate-test-reporter < lcov.info
+addons:
+  code_climate:
+    repo_token: 73193176a35250a8137f668b8ea29e96e589d29607572f2f864823431bf59498
+
 
 
