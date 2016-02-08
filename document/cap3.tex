@@ -198,7 +198,7 @@ Para conocer el negocio y las respectivas actividades que realizan, se entrevist
 \noindent La arquitectura para los servicios web estará conformada por capas, donde cada capa sólo conoce lo que hace la capa inmediatamente inferior. Cada capa encapsula su implementación y ofrece una interfaz para que la capa superior pueda comunicarse.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=12cm, height=4cm]{chapter3-architecture-web-service.png}
+  \includegraphics[width=9cm, height=4cm]{chapter3-architecture-web-service.png}
   \caption{Arquitectura del servicio web [Elaboración propia]}  
 \end{figure}
  \noindent En la \textbf{capa de acceso} se define todos los recursos que proporcionará el servicio web. Un URI - Uniform Resource Identifier, nos permiten identificar de forma única un recurso.
@@ -227,6 +227,36 @@ Para conocer el negocio y las respectivas actividades que realizan, se entrevist
 \begin{itemize}
 \item Minimizar el costo inicial en cuanto a recursos de hardware. una base de datos se crea con un mínimo de memoria en disco duro y en los planes de plataformas en la nube hay un costo por capacidad de almacenamiento.
 \item Minimizar el costo de mantenimiento o administración las bases de datos en cuanto a sacar respaldo de datos y restauración. Como se tiene solo una base de datos se reduce este costo y la complejidad de mantenimiento.  
-\end{itemize} 
+\end{itemize}
+
+
+\section{Plan de Iteraciones}
+Para el desarrollo del proyecto se ha planificado las iteraciones de acuerdo a la prioridad que se asignó de parte  del cliente a los módulos y la dependencia que se tiene tiene entre módulos.
+
+\begin{table}[H]
+	\centering
+    \begin{tabular}{ |P{4cm}|p{10cm}| }
+	  \hline
+	  \rowcolor{indigo-dark} \multicolumn{2}{|c|}{ \textcolor{white}{\textbf{Plan de Iteraciones}}} \\
+	  \hline
+	  \rowcolor{indigo-light} \textbf{Iteración} & \centering \textbf{Objetivos}
+	  \tabularnewline \hline
+	  \multirow{5}{*}{1} & - Desarrollar el módulo de pedidos. \\
+	  	& - Diseño preliminar de la base de datos que puede ir cambiando en las siguientes iteraciones.	\\
+		& - Implantar el proceso de Integración Continua en Travis CI. \\
+		& - Automatización de tareas de ejecución: validación código estándar, test unitarios, cobertura de código, construccion de distribuible. \\
+		& - Configuración del entorno de ejecución para pre-producción en Docker. Que servirá para el testeo de los requerimientos implementados bajo los criterios de aceptación definidos.
+	  \tabularnewline \hline
+	   \multirow{4}{*}{2} & - Desarrollar el módulo de transacciones. \\
+& - Configuración del entorno de ejecución para producción en Docker \\
+& - Implantar el proceso automatizado de Entregas Continuas para la actualización de los entornos de ejecución cuando se implemente una nueva característica en el producto. \\
+& - Automatizar la instalación de entornos de desarrollo.  
+	  \tabularnewline \hline
+	\multirow{2}{*}{3} & - Desarrollar el módulo de Usuarios \\
+& - Desarrollar el módulo de seguridad 
+	  \tabularnewline \hline
+	\end{tabular}
+	\caption{Planificación de iteraciónes y sus respectivos objetivos}
+\end{table}
 
 

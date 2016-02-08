@@ -1,59 +1,31 @@
 
 module.exports = function (grunt) {
 
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+    // Load grunt tasks automatically
+    require('load-grunt-tasks')(grunt);
 
-        jshint: {
-            allFiles: [
-                'src/index.js',
-                'src/client/**/*.js',
-                '!src/client/assets/**/*.js',
-                'src/server/**/*.js',
-                'test/**/*.js'
-            ],
-            options: {
-                jshintrc: '.jshintrc'
-            }
-        },
-        wiredep: {
-            app: {
-                src: ['src/client/index.html']
-            }
-        },
-
-        jasmine_node: {
-            unittest: {
-                options: {
-                    forceExit: true,
-                    match: '.',
-                    matchall: false,
-                    specFolders: [
-                        'test/server'
-                    ],
-                    extensions: 'js',
-                    specNameMatcher: 'spec'
-                },
-                all: [
-                    'src/server/'
-                ],
-                src: ['src/server/**/*.js']
-            }
+    var options = {
+        // Project settings
+        paths: {
+            // Configurable paths
+            app: 'src',
+            build: 'build',
+            dist: 'dist'
         }
-    });
+    };
 
-    //Client and Server dependencies
-    grunt.loadNpmTasks('grunt-contrib-jshint');
+    // Load grunt configurations automatically
+    var configs = require('load-grunt-configs')(grunt, options);
 
-    grunt.loadNpmTasks('grunt-wiredep');
-    grunt.loadNpmTasks('grunt-jasmine-node');
+    // Define the configuration for all the tasks
+    grunt.initConfig(configs);
+
 
     grunt.registerTask('build', [
         'jshint',
-        'wiredep'
+        'less',
+        'copy'
     ]);
 
-    grunt.registerTask('test', [
-        'jasmine_node:unittest'
-    ]);
+    grunt.registerTask('rebuild',['clean', 'build']);
 };

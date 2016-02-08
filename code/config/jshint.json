@@ -1,0 +1,12 @@
+{
+  "allFiles": [
+    "src/index.js",
+    "src/client/!**!/!*.js",
+    "!src/client/assets/!**!/!*.js",
+    "src/server/!**!/!*.js",
+    "test/!**!/!*.js"
+  ],
+  "options": {
+    "jshintrc": ".jshintrc"
+  }
+}
