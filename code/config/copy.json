@@ -25,7 +25,7 @@
       "dot": false,
       "cwd": "./",
       "dest": "build/",
-      "src": ["bower.json", "package.json"],
+      "src": ["bower.json", "package.json", ".bowerrc"],
       "filter": "isFile"
     }]
   },

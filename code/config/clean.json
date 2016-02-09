@@ -4,5 +4,8 @@
   },
   "client-files": {
     "src": "build/client/"
+  },
+  "dependencies-files": {
+    "src": "build/"
   }
 }
