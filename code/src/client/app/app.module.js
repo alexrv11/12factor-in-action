@@ -1,8 +1,9 @@
 (function (){
     'use strict';
     var modules = [
-        'ngNewRouter',
-        'ngResource',
+        'ui.router',
+        'app.login',
+        'app.home',
         'app.order'
     ];
     angular

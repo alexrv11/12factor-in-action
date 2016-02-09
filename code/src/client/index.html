@@ -2,41 +2,33 @@
 <html ng-app="FactorInAction">
 	<head>
 		<title>Factor in Action</title>
-		<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
-		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="assets/dependencies/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/dependencies/metisMenu/dist/metisMenu.min.css">
+        <link rel="stylesheet" href="assets/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="assets/dependencies/metisMenu/dist/metisMenu.min.css">
+        <link rel="stylesheet" href="assets/css/12factor.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+
+        <script src="assets/dependencies/jquery/dist/jquery.min.js"></script>
+		<script src="assets/dependencies/angular/angular.js"></script>
+        <script src="assets/dependencies/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="assets/dependencies/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="assets/dependencies/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="assets/dependencies/metisMenu/dist/metisMenu.min.js"></script>
+        <script src="assets/js/12factor.js"></script>
+        <script src="app/app.module.js"></script>
+        <script src="app/app.router.js"></script>
+        <script src="app/app.constant.js"></script>
+        <script src="app/home/home.controller.js"></script>
+        <script src="app/home/directives/sidebar/sidebar.directive.js"></script>
+        <script src="app/home/directives/header/header.directive.js"></script>
+        <script src="app/home/directives/header/header-notification/header-notification.js"></script>
+        <script src="app/login/login.controller.js"></script>
+        <script src="components/order/order.controller.js"></script>
+        <script src="components/order/order.service.js"></script>
+        <script src="components/order/order.constant.js"></script>
 	</head>
-	<body ng-controller="AppController">
-
-		<nav class="main row">
-			<div class="logo col-md-9">logo</div>
-			<div class="col-md-2">
-				Uner name
-				<span class="glyphicon glyphicon-menu-down"></span>
-			</div>
-			<div class="col-md-1"><a>Exit</a></div>
-		</nav>
-
-		<div class="container-fluid row">
-			<nav class="menu col-md-2">
-				<ul class="nav nav-pills nav-stacked">
-					<li role="presentation" class="active"><a>Orders</a></li>
-					<li role="presentation"><a>Transaction</a></li>
-					<li role="presentation"><a>MotoTaxis</a></li>
-				</ul>
-			</nav>
-
-			<ng-viewport></ng-viewport>
-		</div>
-
-		<script src="../../bower_components/angular/angular.min.js"></script>
-		<script src="../../bower_components/angular-new-router/dist/router.es5.min.js"></script>
-		<script src="../../bower_components/angular-resource/angular-resource.min.js"></script>
-		<script src="app/app.module.js"></script>
-		<script src="app/app.router.js"></script>
-		<script src="app/app.constant.js"></script>
-		<script src="components/order/order.controller.js"></script>
-		<script src="components/order/order.service.js"></script>
-		<script src="components/order/order.constant.js"></script>
-
+	<body>
+        <div ui-view></div>
 	</body>
 </html>
