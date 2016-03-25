@@ -1,13 +1,13 @@
 module.exports = function (app) {
 	var express = require('express');
     var router = express.Router();
-	var api = '/customer-requests';
+	var api = '/orders';
 	var services = app.get('services');
-	var customerRequestService = services.getService('customer-requests')(app);
+	var orderService = services.getService('orders')(app);
 
 	router.get(api, function(req, res) {
 		var options = req.query;
-		customerRequestService.getCustomerRequests(options, function (error, result) {
+		orderService.getOrders(options, function (error, result) {
   			if (error) {
 				res.send(error);
 			} else {
@@ -17,8 +17,8 @@ module.exports = function (app) {
 	});
 
 	router.post(api, function (req, res) {
-        var customerRequest = req.body;
-        customerRequestService.create(customerRequest, function (error, result) {
+        var order = req.body;
+		orderService.create(order, function (error, result) {
             if (error) {
                 res.send(error);
             } else {

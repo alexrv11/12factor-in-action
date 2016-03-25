@@ -1,3 +1,5 @@
+@import "variables";
+
 /* Space out content a bit */
 body {
     padding-bottom: 20px;
@@ -13,7 +15,7 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #6D4C41;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -27,7 +29,7 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #6D4C41;
 }
 
 /* Customize container */
@@ -43,7 +45,7 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #6D4C41;
 }
 .jumbotron .btn {
   font-size: 21px;
@@ -78,6 +80,52 @@ body {
 }
 
 .nav>li.active>a {
-text-decoration: none;
-background-color: #eee;
+  text-decoration: none;
+  background-color: #757575;
+  color: #EFEBE9;
+}
+
+.nav>li>a {
+  text-decoration: none;
+  background-color: #424242;
+  color: #EFEBE9;
+}
+
+.nav>li>a:hover {
+  text-decoration: none;
+  background-color: #757575;
+  color: #EFEBE9;
+}
+
+.home-content {
+  padding: 20px 10px;
+  background-color: #EFEBE9;
+}
+
+.title-home-content {
+  margin-bottom: 10px;
+  color: #5D4037;
+}
+
+.home {
+  background-color: @home-background;
+}
+
+.navbar {
+  background-color: @navbar-background;
+}
+
+.navbar-top-links>li>a {
+  background-color: @navbar-background;
+  color: @menu-item-color;
+}
+
+.navbar-top-links>li>a:hover {
+  background-color: @navbar-background;
+  color: @menu-item-color;
+}
+
+.table > thead > tr > th {
+  background-color: @header-table-color;
+  color: @header-table-font-color;
 }

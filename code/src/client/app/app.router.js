@@ -15,7 +15,8 @@
         }).state('home.order', {
             url: "/orders",
             templateUrl: "components/order/order.html",
-            controller: "OrderController"
+            controller: "OrderController",
+            controllerAs: "order"
         }).state('home.frequency', {
             url: "/frequencies",
             templateUrl: "components/frequency/frequency.html",

@@ -4,9 +4,9 @@
  * @return <Object>
  */
 var mongoose = require('mongoose');
-var schema = require('./customer-request-schema');
+var schema = require('./order-schema');
 
-var modelName = 'customerRequests';
+var modelName = 'orders';
 var model = mongoose.model(modelName, schema);
 
 

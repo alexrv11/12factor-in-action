@@ -3,5 +3,5 @@
 
     angular
         .module('FactorInAction')
-        .constant('BASE_URL', 'http://localhost:3000');
+        .constant('BASE_URL', 'http://localhost:9090/api');
 })();

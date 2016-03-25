@@ -10,7 +10,8 @@
     function orderService($resource, BASE_URL, ORDER_URL) {
         var path = BASE_URL + ORDER_URL;
         var resource = $resource(path, {
-            save: { method: 'POST' }
+            save: { method: 'POST' },
+            query: {method: 'GET'}
         });
         return resource;
     }
