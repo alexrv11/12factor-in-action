@@ -11,14 +11,14 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="code">Codigo:</label>
+                            <label for="code" ng-class="{ 'text-danger': productForm.code.$touched && !productForm.code.$valid }">Codigo:</label>
                             <input type="text" name="code" id="code" class="form-control"
                                    ng-model="product.item.code" placeholder="Codigo Producto" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="name">Nombre:</label>
+                            <label for="name" ng-class="{ 'text-danger': productForm.name.$touched && !productForm.name.$valid }">Nombre:</label>
                             <input type="text" name="name" id="name" class="form-control"
                                    ng-model="product.item.name" placeholder="Nombre del Producto" required>
                         </div>
@@ -26,14 +26,14 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="name">Descripcion:</label>
-                            <input type="text" name="name" id="name" class="form-control"
+                            <label for="description" ng-class="{ 'text-danger': productForm.description.$touched && !productForm.description.$valid }">Descripcion:</label>
+                            <input type="text" name="description" id="description" class="form-control"
                                    ng-model="product.item.description" placeholder="Descripcion" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="price">Precio:</label>
+                            <label for="price" ng-class="{ 'text-danger': productForm.price.$touched && !productForm.price.$valid }">Precio:</label>
                             <input type="text" name="price" id="price" class="form-control"
                                    ng-model="product.item.price" placeholder="Precio" required>
                         </div>
@@ -41,14 +41,14 @@
 
                     <div class="col-md-4">
                         <div class="form-group choose-file">
-                            <label for="image">Imagen:</label>
-                            <input type="file" id="image"
+                            <label for="image" ng-class="{ 'text-danger': productForm.image.$touched && !productForm.image.$valid }">Imagen:</label>
+                            <input type="file" name="image" id="image"
                                    ng-model="product.item.image" placeholder="Imagen producto" required>
                         </div>
                     </div>
 
                     <div class="col-md-4">
-                        <div class="form-group register-button">
+                        <div class="form-group text-center register-button">
                             <button class="btn btn-primary" ng-click="product.save()" ng-disabled="productForm.$invalid">Registrar</button>
                         </div>
                     </div>
