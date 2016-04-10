@@ -5,15 +5,16 @@
         .module('app.company')
         .controller('CompanyController', CompanyController);
 
-    CompanyController.$inject = [ 'companyService', 'socket' ];
+    CompanyController.$inject = [ 'companyService', 'socket', '$scope' ];
 
-    function CompanyController(companyService, socket) {
+    function CompanyController(companyService, socket, $scope) {
         var vm = this;
         vm.item = {};
         vm.items = getCompanies();
         vm.save = save;
 
         function save() {
+            $scope.companyForm.$setUntouched();
             var promise = companyService.save(vm.item).$promise;
             promise.then(function (data) {
                 vm.item = {};
