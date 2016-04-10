@@ -37,6 +37,13 @@
             });
         }
 
+        vm.passwordsMatches = false;
+        vm.comparePasswords = function () {
+            vm.passwordsMatches = (vm.item.user && vm.item.user.password && vm.item.user.confirmPassword &&
+            vm.item.user.password.length > 0 && (vm.item.user.password === vm.item.user.confirmPassword));
+            console.log(vm.passwordsMatches);
+        };
+
         socket.on('companies:create', function(data){
             console.log('socket:', data);
             vm.items.push(data);

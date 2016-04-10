@@ -9,17 +9,17 @@
 
                 <div class="panel-body">
                     <div class="form-group col-md-6">
-                        <label for="name">Nombre Empresa:</label>
+                        <label for="name" ng-class="{ 'text-danger': companyForm.name.$touched && !companyForm.name.$valid}">Nombre Empresa:</label>
                         <input type="text" name="name" id="name" class="form-control"
                                ng-model="company.item.name" placeholder="Nombre Empresa" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="nit">NIT:</label>
-                        <input type="text" name="nit" id="nit" class="form-control"
+                        <label for="nit" ng-class="{ 'text-danger': companyForm.nit.$touched && !companyForm.nit.$valid}">NIT:</label>
+                        <input type="number" name="nit" id="nit" class="form-control"
                                ng-model="company.item.nit" placeholder="NIT" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="pavilion">Pabellon:</label>
+                        <label for="pavilion" ng-class="{ 'text-danger': companyForm.pavilion.$touched && !companyForm.pavilion.$valid}">Pabellon:</label>
                         <select type="" name="pavilion" id="pavilion" class="form-control"
                                 ng-model="company.item.pavilion" placeholder="Pabellon" required>
                             <option>Union Europea</option>
@@ -28,7 +28,7 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="companyType">Tipo de Empresa:</label>
+                        <label for="companyType" ng-class="{ 'text-danger': companyForm.companyType.$touched && !companyForm.companyType.$valid}">Tipo de Empresa:</label>
                         <select type="" name="companyType" id="companyType" class="form-control"
                                 ng-model="company.item.companyType" placeholder="Tipo de Empresa" required>
                             <option>Agroindustrial</option>
@@ -37,7 +37,7 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="category">Rubro:</label>
+                        <label for="category" ng-class="{ 'text-danger': companyForm.category.$touched && !companyForm.category.$valid}">Rubro:</label>
                         <select type="" name="category" id="category" class="form-control"
                                 ng-model="company.item.category" placeholder="Rubro" required>
                             <option>Alimentos</option>
@@ -57,24 +57,24 @@
 
                 <div class="panel-body">
                     <div class="form-group col-md-6">
-                        <label for="user-name">Nombre Usuario:</label>
-                        <input type="text" name="user-name" id="user-name" class="form-control"
+                        <label for="user-name" ng-class="{ 'text-danger': companyForm.userName.$touched && !companyForm.userName.$valid}">Nombre Usuario:</label>
+                        <input type="text" name="userName" id="user-name" class="form-control"
                                ng-model="company.item.user.name" placeholder="Nombre Usuario" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="account">Cuenta:</label>
+                        <label for="account"  ng-class="{ 'text-danger': companyForm.account.$touched && !companyForm.account.$valid}">Cuenta:</label>
                         <input type="text" name="account" id="account" class="form-control"
                                ng-model="company.item.user.login" placeholder="Cuenta usuario" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="password">Contraseña:</label>
+                        <label for="password" ng-class="{ 'text-danger': companyForm.password.$touched && (!companyForm.password.$valid || !company.passwordsMatches)}">Contraseña:</label>
                         <input type="password" name="password" id="password" class="form-control"
-                               ng-model="company.item.user.password" placeholder="Contrasena" required>
+                               ng-model="company.item.user.password" placeholder="Contrasena" required ng-keyup="company.comparePasswords()">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="password">Confirmar contraseña:</label>
-                        <input type="password" name="password" id="password" class="form-control "
-                               ng-model="company.item.user.confirmPassword" placeholder="Confirmar Contrasena" required>
+                        <label for="password-confirm" ng-class="{ 'text-danger': companyForm.passwordConfirm.$touched && (!companyForm.passwordConfirm.$valid || !company.passwordsMatches)}">Confirmar contraseña:</label>
+                        <input type="password" name="passwordConfirm" id="password-confirm" class="form-control "
+                               ng-model="company.item.user.confirmPassword" placeholder="Confirmar Contrasena" required ng-keyup="company.comparePasswords()">
                     </div>
                 </div>
             </div>
