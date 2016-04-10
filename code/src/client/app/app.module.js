@@ -7,7 +7,8 @@
         'app.login',
         'app.home',
         'app.company',
-        'app.user'
+        'app.user',
+        'app.product'
     ];
     var app = angular.module('feicoApp', modules);
 

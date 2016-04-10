@@ -10,6 +10,15 @@ var schema = mongoose.Schema({
     name: {
         type: String
     },
+    description: {
+    	type: String
+    },
+    code: {
+    	type: String
+    },
+    image: {
+    	type: String
+    },
     companyId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'companies'

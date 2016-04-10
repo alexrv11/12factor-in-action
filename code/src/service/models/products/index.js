@@ -4,7 +4,7 @@
  * @return <Object>
  */
 var mongoose = require('mongoose');
-var schema = require('./employee-schema');
+var schema = require('./product-schema');
 
 var modelName = 'products';
 var model = mongoose.model(modelName, schema);
