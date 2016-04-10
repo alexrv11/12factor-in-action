@@ -1,0 +1,66 @@
+<div class="container-fluid home-content">
+    <h3 class="title-home-content">Tiendas</h3>
+    <form name="companyForm" class="form-inline">
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name" class="form-control"
+                   ng-model="company.item.name" placeholder="Nombre Empresa" required>
+        </div>
+        <div class="form-group">
+            <label for="nit">NIT:</label>
+            <input type="text" name="nit" id="nit" class="form-control"
+                   ng-model="company.item.nit" placeholder="NIT" required>
+        </div>
+        <div class="form-group">
+            <label for="pavilion">Pabellon:</label>
+            <select type="" name="pavilion" id="pavilion" class="form-control"
+                    ng-model="company.item.pavilion" placeholder="Pabellon" required>
+                <option>Union Europea</option>
+                <option>Bolivia</option>
+                <option>Internacional</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="companyType">Tipo de Empresa:</label>
+            <select type="" name="companyType" id="companyType" class="form-control"
+                   ng-model="company.item.companyType" placeholder="Tipo de Empresa" required>
+                <option>Agroindustrial</option>
+                <option>Comercial</option>
+                <option>Servicio</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="category">Rubro:</label>
+            <select type="" name="category" id="category" class="form-control"
+                    ng-model="company.item.category" placeholder="Rubro" required>
+                <option>Alimentos</option>
+                <option>Prendas de Vestir</option>
+                <option>Tecnologia</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="company.save()" ng-disabled="companyForm.$invalid">Register</button>
+        </div>
+    </form>
+
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Empresa</th>
+                <th>NIT</th>
+                <th>Tipo de Empresa</th>
+                <th>Pabellon</th>
+                <th>Rubro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in company.items">
+                <td>{{ item.name }}</td>
+                <td>{{ item.nit }}</td>
+                <td>{{ item.companyType }}</td>
+                <td>{{ item.pavilion }}</td>
+                <td>{{ item.category }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
