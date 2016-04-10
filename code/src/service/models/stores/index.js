@@ -1,12 +1,12 @@
 /**
- * This File exports the folder as customer-request module
+ * This File exports the folder as company module
  *
  * @return <Object>
  */
 var mongoose = require('mongoose');
-var schema = require('./order-schema');
+var schema = require('./store-schema');
 
-var modelName = 'orders';
+var modelName = 'stores';
 var model = mongoose.model(modelName, schema);
 
 

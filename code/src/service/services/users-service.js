@@ -1,7 +1,7 @@
 module.exports = function (app) {
-	var model = app.get('models').getCollection('orders').model;
+	var model = app.get('models').getCollection('users').model;
 	return {
-		getOrders: function (options, callback) {
+		getUsers: function (options, callback) {
 			model.find(options, callback);
 		},
 		create: function (order, callback) {

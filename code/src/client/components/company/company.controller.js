@@ -2,23 +2,22 @@
     'use strict';
 
     angular
-        .module('app.order')
-        .controller('OrderController', OrderController);
+        .module('app.company')
+        .controller('CompanyController', CompanyController);
 
-    OrderController.$inject = [ 'orderService' ];
+    CompanyController.$inject = [ 'companyService', 'socket' ];
 
-    function OrderController(orderService) {
+    function CompanyController(companyService, socket) {
         var vm = this;
         vm.item = {};
-        vm.items = getOrders();
+        vm.items = getCompanies();
         vm.save = save;
-		vm.assign = assign;
 
         function save() {
-            var promise = orderService.save(vm.item).$promise;
-            promise.then(function (data){
-                vm.items.push(data);
+            var promise = companyService.save(vm.item).$promise;
+            promise.then(function (data) {
                 vm.item = {};
+                console.log('item created', data);
             }, function (error){
                 console.error(error);
                 // TODO remove code whe the REST API will done
@@ -27,8 +26,8 @@
             });
         }
 
-        function getOrders() {
-            var promise = orderService.query().$promise;
+        function getCompanies() {
+            var promise = companyService.query().$promise;
             promise.then(function (data) {
                 console.log('data', data);
                 vm.items = data;
@@ -38,9 +37,9 @@
             });
         }
 
-		function assign(item) {
-			console.log("item:", item);
-		}
+        socket.on('companies:create', function(data){
+            console.log('socket:', data);
+            vm.items.push(data);
+        })
     }
-
 })();

@@ -1,4 +1,15 @@
 <div>
-    login page
-    <a ui-sref="home">Home</a>
+    <div class="container">
+
+        <form class="form-signin" name="loginForm">
+            <h2 class="form-signin-heading">FeicolBol</h2>
+            <label for="account" class="sr-only">Cuenta</label>
+            <input type="text" id="account" class="form-control" placeholder="Cuenta" required autofocus ng-model="login.credential.login">
+            <label for="inputPassword" class="sr-only">Contrase&ntildea</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required ng-model="login.credential.password">
+
+            <button class="btn btn-lg btn-success btn-block"  ng-click="login.login()" ng-disabled="loginForm.$invalid" type="submit">Iniciar</button>
+        </form>
+
+    </div> <!-- /container -->
 </div>

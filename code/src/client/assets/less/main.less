@@ -3,6 +3,7 @@
 /* Space out content a bit */
 body {
     padding-bottom: 20px;
+  background-color: @content-background;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -99,7 +100,7 @@ body {
 
 .home-content {
   padding: 20px 10px;
-  background-color: #EFEBE9;
+  background-color: @content-background;
 }
 
 .title-home-content {
@@ -125,7 +126,20 @@ body {
   color: @menu-item-color;
 }
 
+.table {
+  margin-top: 10px;
+}
+
 .table > thead > tr > th {
   background-color: @header-table-color;
   color: @header-table-font-color;
+}
+
+.form-group {
+  margin: 5px;
+}
+
+.content-home {
+  min-height: 561px;
+  background-color: @content-background;
 }

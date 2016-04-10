@@ -2,6 +2,6 @@
     'use strict';
 
     angular
-        .module('FactorInAction')
+        .module('feicoApp')
         .constant('BASE_URL', 'http://localhost:9090/api');
 })();

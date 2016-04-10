@@ -9,9 +9,11 @@
 angular.module('app.home')
 	.directive('header',function(){
 		return {
-        templateUrl:'app/home/directives/header/header.html',
-        restrict: 'E',
-        replace: true
+        	templateUrl:'app/home/directives/header/header.html',
+        	restrict: 'E',
+        	replace: true,
+			controller: 'HomeController',
+			controllerAs: 'home'
     	}
 	});
 

@@ -6,7 +6,7 @@
  */
 module.exports = function(app) {
     var mongoose = require('mongoose');
-    mongoose.connect('mongodb://localhost/moto-service-db', function(error) {
+    mongoose.connect('mongodb://localhost/feicobol-db', function(error) {
         if(error) {
             throw error;
         }
