@@ -1,86 +1,108 @@
 <div class="container-fluid home-content">
     <h3 class="title-home-content">Empresas</h3>
-    <form name="companyForm" class="form-inline">
-        <div class="form-group">
-            <label for="name">Nombre Empresa:</label>
-            <input type="text" name="name" id="name" class="form-control"
-                   ng-model="company.item.name" placeholder="Nombre Empresa" required>
+    <form name="companyForm" class="form col-xs-12">
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Datos de empresa</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group col-md-6">
+                        <label for="name" ng-class="{ 'text-danger': companyForm.name.$touched && !companyForm.name.$valid}">Nombre Empresa:</label>
+                        <input type="text" name="name" id="name" class="form-control"
+                               ng-model="company.item.name" placeholder="Nombre Empresa" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="nit" ng-class="{ 'text-danger': companyForm.nit.$touched && !companyForm.nit.$valid}">NIT:</label>
+                        <input type="number" name="nit" id="nit" class="form-control"
+                               ng-model="company.item.nit" placeholder="NIT" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="pavilion" ng-class="{ 'text-danger': companyForm.pavilion.$touched && !companyForm.pavilion.$valid}">Pabellon:</label>
+                        <select type="" name="pavilion" id="pavilion" class="form-control"
+                                ng-model="company.item.pavilion" placeholder="Pabellon" required>
+                            <option>Union Europea</option>
+                            <option>Bolivia</option>
+                            <option>Internacional</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="companyType" ng-class="{ 'text-danger': companyForm.companyType.$touched && !companyForm.companyType.$valid}">Tipo de Empresa:</label>
+                        <select type="" name="companyType" id="companyType" class="form-control"
+                                ng-model="company.item.companyType" placeholder="Tipo de Empresa" required>
+                            <option>Agroindustrial</option>
+                            <option>Comercial</option>
+                            <option>Servicio</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="category" ng-class="{ 'text-danger': companyForm.category.$touched && !companyForm.category.$valid}">Rubro:</label>
+                        <select type="" name="category" id="category" class="form-control"
+                                ng-model="company.item.category" placeholder="Rubro" required>
+                            <option>Alimentos</option>
+                            <option>Prendas de Vestir</option>
+                            <option>Tecnologia</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="nit">NIT:</label>
-            <input type="text" name="nit" id="nit" class="form-control"
-                   ng-model="company.item.nit" placeholder="NIT" required>
-        </div>
-        <div class="form-group">
-            <label for="pavilion">Pabellon:</label>
-            <select type="" name="pavilion" id="pavilion" class="form-control"
-                    ng-model="company.item.pavilion" placeholder="Pabellon" required>
-                <option>Union Europea</option>
-                <option>Bolivia</option>
-                <option>Internacional</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="companyType">Tipo de Empresa:</label>
-            <select type="" name="companyType" id="companyType" class="form-control"
-                   ng-model="company.item.companyType" placeholder="Tipo de Empresa" required>
-                <option>Agroindustrial</option>
-                <option>Comercial</option>
-                <option>Servicio</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="category">Rubro:</label>
-            <select type="" name="category" id="category" class="form-control"
-                    ng-model="company.item.category" placeholder="Rubro" required>
-                <option>Alimentos</option>
-                <option>Prendas de Vestir</option>
-                <option>Tecnologia</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="user-name">Nombre Usuario:</label>
-            <input type="text" name="user-name" id="user-name" class="form-control"
-                   ng-model="company.item.user.name" placeholder="Nombre Usuario" required>
-        </div>
-        <div class="form-group">
-            <label for="account">Cuenta:</label>
-            <input type="text" name="account" id="account" class="form-control"
-                   ng-model="company.item.user.login" placeholder="Cuenta usuario" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Contrasena:</label>
-            <input type="password" name="password" id="password" class="form-control"
-                   ng-model="company.item.user.password" placeholder="Contrasena" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Confirmar Contrasena:</label>
-            <input type="password" name="password" id="password" class="form-control"
-                   ng-model="company.item.user.confirmPassword" placeholder="Confirmar Contrasena" required>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary" ng-click="company.save()" ng-disabled="companyForm.$invalid">Register</button>
+
+        <div class="col-xs-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cuenta de administrador de la Empresa</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group col-md-6">
+                        <label for="user-name" ng-class="{ 'text-danger': companyForm.userName.$touched && !companyForm.userName.$valid}">Nombre Usuario:</label>
+                        <input type="text" name="userName" id="user-name" class="form-control"
+                               ng-model="company.item.user.name" placeholder="Nombre Usuario" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="account"  ng-class="{ 'text-danger': companyForm.account.$touched && !companyForm.account.$valid}">Cuenta:</label>
+                        <input type="text" name="account" id="account" class="form-control"
+                               ng-model="company.item.user.login" placeholder="Cuenta usuario" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="password" ng-class="{ 'text-danger': companyForm.password.$touched && (!companyForm.password.$valid || !company.passwordsMatches)}">Contraseña:</label>
+                        <input type="password" name="password" id="password" class="form-control"
+                               ng-model="company.item.user.password" placeholder="Contrasena" required ng-keyup="company.comparePasswords()">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="password-confirm" ng-class="{ 'text-danger': companyForm.passwordConfirm.$touched && (!companyForm.passwordConfirm.$valid || !company.passwordsMatches)}">Confirmar contraseña:</label>
+                        <input type="password" name="passwordConfirm" id="password-confirm" class="form-control "
+                               ng-model="company.item.user.confirmPassword" placeholder="Confirmar Contrasena" required ng-keyup="company.comparePasswords()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                <button class="btn btn-primary" ng-click="company.save()" ng-disabled="companyForm.$invalid">Registrar</button>
+            </div>
         </div>
     </form>
 
     <table class="table table-hover table-bordered">
         <thead>
-            <tr>
-                <th>Empresa</th>
-                <th>NIT</th>
-                <th>Tipo de Empresa</th>
-                <th>Pabellon</th>
-                <th>Rubro</th>
-            </tr>
+        <tr>
+            <th>Empresa</th>
+            <th>NIT</th>
+            <th>Tipo de Empresa</th>
+            <th>Pabellon</th>
+            <th>Rubro</th>
+        </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in company.items">
-                <td>{{ item.name }}</td>
-                <td>{{ item.nit }}</td>
-                <td>{{ item.companyType }}</td>
-                <td>{{ item.pavilion }}</td>
-                <td>{{ item.category }}</td>
-            </tr>
+        <tr ng-repeat="item in company.items">
+            <td>{{ item.name }}</td>
+            <td>{{ item.nit }}</td>
+            <td>{{ item.companyType }}</td>
+            <td>{{ item.pavilion }}</td>
+            <td>{{ item.category }}</td>
+        </tr>
         </tbody>
     </table>
 </div>

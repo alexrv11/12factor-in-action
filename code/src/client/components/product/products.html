@@ -1,54 +1,80 @@
-<div class="container-fluid home-content">
+<div class="container-fluid home-content products-view">
     <h3 class="title-home-content">Productos</h3>
-    <form name="productForm" class="form-inline">
-        <div class="form-group">
-            <label for="code">Codigo:</label>
-            <input type="text" name="code" id="code" class="form-control"
-                   ng-model="product.item.code" placeholder="Codigo Producto" required>
-        </div>
-        <div class="form-group">
-            <label for="name">Nombre:</label>
-            <input type="text" name="name" id="name" class="form-control"
-                   ng-model="product.item.name" placeholder="Nombre del Producto" required>
-        </div>
-        <div class="form-group">
-            <label for="name">Descripcion:</label>
-            <input type="text" name="name" id="name" class="form-control"
-                   ng-model="product.item.description" placeholder="Descripcion" required>
-        </div>
-        <div class="form-group">
-            <label for="price">Precio:</label>
-            <input type="text" name="price" id="price" class="form-control"
-                   ng-model="product.item.price" placeholder="Precio" required>
-        </div>
-        <div class="form-group">
-            <label for="image">Imagen:</label>
-            <input type="file" name="image" id="image" class="form-control"
-                   ng-model="product.item.image" placeholder="Imagen producto" required>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary" ng-click="product.save()" ng-disabled="productForm.$invalid">Register</button>
+    <form name="productForm">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Registrar productos</h3>
+                </div>
+
+                <div class="panel-body">
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="code" ng-class="{ 'text-danger': productForm.code.$touched && !productForm.code.$valid }">Codigo:</label>
+                            <input type="text" name="code" id="code" class="form-control"
+                                   ng-model="product.item.code" placeholder="Codigo Producto" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="name" ng-class="{ 'text-danger': productForm.name.$touched && !productForm.name.$valid }">Nombre:</label>
+                            <input type="text" name="name" id="name" class="form-control"
+                                   ng-model="product.item.name" placeholder="Nombre del Producto" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="description" ng-class="{ 'text-danger': productForm.description.$touched && !productForm.description.$valid }">Descripcion:</label>
+                            <input type="text" name="description" id="description" class="form-control"
+                                   ng-model="product.item.description" placeholder="Descripcion" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="price" ng-class="{ 'text-danger': productForm.price.$touched && !productForm.price.$valid }">Precio:</label>
+                            <input type="text" name="price" id="price" class="form-control"
+                                   ng-model="product.item.price" placeholder="Precio" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group choose-file">
+                            <label for="image" ng-class="{ 'text-danger': productForm.image.$touched && !productForm.image.$valid }">Imagen:</label>
+                            <input type="file" name="image" id="image"
+                                   ng-model="product.item.image" placeholder="Imagen producto">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group text-center register-button">
+                            <button class="btn btn-primary" ng-click="product.save()" ng-disabled="productForm.$invalid">Registrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 
     <table class="table table-hover table-bordered">
         <thead>
-            <tr>
-                <th>Empresa</th>
-                <th>NIT</th>
-                <th>Tipo de Empresa</th>
-                <th>Pabellon</th>
-                <th>Rubro</th>
-            </tr>
+        <tr>
+            <th>Empresa</th>
+            <th>NIT</th>
+            <th>Tipo de Empresa</th>
+            <th>Pabellon</th>
+            <th>Rubro</th>
+        </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in company.items">
-                <td>{{ item.name }}</td>
-                <td>{{ item.nit }}</td>
-                <td>{{ item.companyType }}</td>
-                <td>{{ item.pavilion }}</td>
-                <td>{{ item.category }}</td>
-            </tr>
+        <tr ng-repeat="item in company.items">
+            <td>{{ item.name }}</td>
+            <td>{{ item.nit }}</td>
+            <td>{{ item.companyType }}</td>
+            <td>{{ item.pavilion }}</td>
+            <td>{{ item.category }}</td>
+        </tr>
         </tbody>
     </table>
 </div>

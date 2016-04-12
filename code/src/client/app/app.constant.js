@@ -3,5 +3,5 @@
 
     angular
         .module('feicoApp')
-        .constant('BASE_URL', 'http://localhost:4000/api');
+        .constant('BASE_URL', 'http://localhost:9090/api');
 })();
