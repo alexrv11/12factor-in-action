@@ -4,7 +4,7 @@
             <li ui-sref-active="active" ng-repeat="item in menu">
                 <!--TODO:  ui-sref="{{item.action}} removed becaude was cousing compilation problems.-->
                 <!--<a ui-sref="{{item.action}}"><i class="fa fa-fw {{item.icon}}"></i> {{ item.title }}</a>-->
-                <a><i class="fa fa-fw {{item.icon}}"></i> {{ item.title }}</a>
+                <a ui-sref="{{item.action}}"><i class="fa fa-fw {{item.icon}}"></i> {{ item.title }}</a>
             </li>
         </ul>
     </div>

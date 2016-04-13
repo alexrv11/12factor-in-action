@@ -40,15 +40,18 @@ angular.module('app.home')
         } else if (type == 'company') {
           $scope.menu.push({
             title: 'Productos',
-            icon: 'fa-money'
+            icon: 'fa-money',
+            action: 'home.products'
           });
           $scope.menu.push({
             title: 'Tiendas',
-            icon: 'fa-table'
+            icon: 'fa-table',
+            action: 'home.stores'
           });
           $scope.menu.push({
             title: 'Empleados',
-            icon: 'fa-user-plus'
+            icon: 'fa-user-plus',
+            action: 'home.employees'
           });
         } else if (type == 'employee') {
           $scope.menu.push({
