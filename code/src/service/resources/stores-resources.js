@@ -1,15 +1,15 @@
 module.exports = function (app) {
     var express = require('express');
     var router = express.Router();
-    var api = '/companies/:companyId/employees';
+    var api = '/companies/:companyId/stores';
     var services = app.get('services');
-    var employeeService = services.getService('employees')(app);
+    var storeService = services.getService('stores')(app);
 
     router.get(api, function(req, res) {
         var options = req.query;
         var companyId = req.params.companyId;
         options.companyId = companyId;
-        employeeService.getEmployees(options, function (error, result) {
+        storeService.getStores(options, function (error, result) {
             if (error) {
                 res.send(error);
             } else {
@@ -19,13 +19,15 @@ module.exports = function (app) {
     });
 
     router.post(api, function (req, res) {
-        var order = req.body;
-        employeeService.create(order, function (error, result) {
+        var store = req.body;
+        var companyId = req.params.companyId;
+        store.companyId = companyId;
+        storeService.create(store, function (error, result) {
             if (error) {
                 res.send(error);
             } else {
                 res.send(result);
-                console.log('server employee create request:', result);
+                console.log('server stores create request:', result);
                 var socket = app.get('socket');
 
                 // WebSocket server

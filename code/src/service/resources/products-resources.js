@@ -1,7 +1,7 @@
 module.exports = function (app) {
 	var express = require('express');
     var router = express.Router();
-	var api = '/:companyId/products';
+	var api = '/companies/:companyId/products';
 	var services = app.get('services');
 	var productService = services.getService('products')(app);
 

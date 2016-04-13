@@ -5,10 +5,18 @@
  */
 var mongoose  = require('mongoose');
 
+var position = {
+	latitude: { type: String },
+	longitude: { type: String }
+};
 
 var schema = mongoose.Schema({
     name: {
         type: String
+    },
+    position: position,
+    address: {
+    	type: String
     },
     companyId: {
         type: mongoose.Schema.Types.ObjectId,
