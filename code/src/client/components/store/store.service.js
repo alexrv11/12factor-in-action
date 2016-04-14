@@ -2,13 +2,14 @@
    'use strict';
 
     angular
-        .module('app.company')
-        .service('companyService', companyService);
+        .module('app.store')
+        .service('storeService', storeService);
 
-    companyService.$inject = [ '$resource', 'BASE_URL', 'COMPANY_URL' ];
+    storeService.$inject = [ '$resource', '$window', 'BASE_URL', 'COMPANY_URL', 'STORE_URL' ];
 
-    function companyService($resource, BASE_URL, COMPANY_URL) {
-        var path = BASE_URL + COMPANY_URL;
+    function storeService($resource, $window, BASE_URL, COMPANY_URL, STORE_URL) {
+        var companyId = $window.sessionStorage.companyId;
+        var path = BASE_URL + COMPANY_URL +'/'+ companyId + STORE_URL;
         var resource = $resource(path, {}, {
             save: { method: 'POST' },
             query: { method: 'GET', isArray: true }

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.company')
-        .constant('COMPANY_URL', '/companies');
+        .module('app.employee')
+        .constant('EMPLOYEE_URL', '/employees');
 
 })();

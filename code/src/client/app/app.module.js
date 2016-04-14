@@ -8,7 +8,9 @@
         'app.home',
         'app.company',
         'app.user',
-        'app.product'
+        'app.product',
+        'app.store',
+        'app.employee'
     ];
     var app = angular.module('feicoApp', modules);
 

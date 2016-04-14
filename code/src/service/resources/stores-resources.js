@@ -31,7 +31,7 @@ module.exports = function (app) {
                 var socket = app.get('socket');
 
                 // WebSocket server
-                socket.emit("employees:create", result);
+                socket.emit("stores:create", result);
             }
         });
     });

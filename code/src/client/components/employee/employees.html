@@ -1,65 +1,50 @@
 <div class="container-fluid home-content">
     <h3 class="title-home-content">Empleados</h3>
-    <form name="companyForm" class="form-inline">
+    <form name="employeeForm" class="form-inline">
         <div class="form-group">
             <label for="name">Nombre:</label>
             <input type="text" name="name" id="name" class="form-control"
-                   ng-model="company.item.name" placeholder="Nombre Empresa" required>
+                   ng-model="employee.item.name" placeholder="Nombre Empleado" required>
         </div>
         <div class="form-group">
-            <label for="nit">NIT:</label>
-            <input type="text" name="nit" id="nit" class="form-control"
-                   ng-model="company.item.nit" placeholder="NIT" required>
+            <label for="address">Direccion:</label>
+            <input type="text" name="address" id="nit" class="form-control"
+                   ng-model="employee.item.address" placeholder="Direccion" required>
         </div>
         <div class="form-group">
-            <label for="pavilion">Pabellon:</label>
-            <select type="" name="pavilion" id="pavilion" class="form-control"
-                    ng-model="company.item.pavilion" placeholder="Pabellon" required>
-                <option>Union Europea</option>
-                <option>Bolivia</option>
-                <option>Internacional</option>
-            </select>
+            <label for="phone">Telefono:</label>
+            <input type="text" name="phone" id="phone" class="form-control"
+                   ng-model="employee.item.phone" placeholder="Telefono" required>
         </div>
-        <div class="form-group">
-            <label for="companyType">Tipo de Empresa:</label>
-            <select type="" name="companyType" id="companyType" class="form-control"
-                   ng-model="company.item.companyType" placeholder="Tipo de Empresa" required>
-                <option>Agroindustrial</option>
-                <option>Comercial</option>
-                <option>Servicio</option>
-            </select>
+        <div class="form-group col-md-6">
+                        <label for="type" ng-class="{ 'text-danger': employeeForm.type.$touched && !employeeForm.pavilion.$valid}">Oficio:</label>
+                        <select type="" name="type" id="type" class="form-control"
+                                ng-model="employee.item.type" placeholder="Tipo Empleado" required>
+                            <option>Vendedor</option>
+                            <option>Azafata</option>
+                        </select>
         </div>
+                    
         <div class="form-group">
-            <label for="category">Rubro:</label>
-            <select type="" name="category" id="category" class="form-control"
-                    ng-model="company.item.category" placeholder="Rubro" required>
-                <option>Alimentos</option>
-                <option>Prendas de Vestir</option>
-                <option>Tecnologia</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary" ng-click="company.save()" ng-disabled="companyForm.$invalid">Register</button>
+            <button class="btn btn-primary" ng-click="employee.save()" ng-disabled="employeeForm.$invalid">Register</button>
         </div>
     </form>
 
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
-                <th>Empresa</th>
-                <th>NIT</th>
-                <th>Tipo de Empresa</th>
-                <th>Pabellon</th>
-                <th>Rubro</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Oficio</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in company.items">
+            <tr ng-repeat="item in employee.items">
                 <td>{{ item.name }}</td>
-                <td>{{ item.nit }}</td>
-                <td>{{ item.companyType }}</td>
-                <td>{{ item.pavilion }}</td>
-                <td>{{ item.category }}</td>
+                <td>{{ item.address }}</td>
+                <td>{{ item.phone }}</td>
+                <td>{{ item.type }}</td>
             </tr>
         </tbody>
     </table>

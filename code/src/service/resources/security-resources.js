@@ -11,19 +11,21 @@ module.exports = function (app) {
 	router.post(apiLogin, function (req, res) {
         var data = req.body;
 		var token = randtoken.generate(16);
-		securityService.login({login:data.login, password:data.password}, token, function (error, result) {
+		securityService.login({login:data.login, password:data.password}, token, function (error, result, companyId) {
             if (error) {
                 res.send(error);
             } else {
-				console.log(data.login, data.password);
 				data = {};
-				console.log(result);
 				data.login = result.login;
 				data.name = result.name;
-				data.token = token;
-				data.email = result.email;
+				data.token = result.token;
+				data.state = result.state;
 				data.type = result.type;
-                res.send(data);
+				
+				if(companyId) {
+					data.companyId = companyId;
+				}
+				res.send(data);
 				var socket = app.get('socket');
 				// WebSocket server
 				socket.emit("users:connected", data);

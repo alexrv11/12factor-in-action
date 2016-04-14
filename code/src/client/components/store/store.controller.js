@@ -2,19 +2,20 @@
     'use strict';
 
     angular
-        .module('app.company')
-        .controller('CompanyController', CompanyController);
+        .module('app.store')
+        .controller('StoreController', StoreController);
 
-    CompanyController.$inject = [ 'companyService', 'socket' ];
+    StoreController.$inject = [ 'storeService', 'socket' ];
 
-    function CompanyController(companyService, socket) {
+    function StoreController(storeService, socket) {
         var vm = this;
         vm.item = {};
-        vm.items = getCompanies();
+        vm.items = getStores();
         vm.save = save;
 
         function save() {
-            var promise = companyService.save(vm.item).$promise;
+            
+            var promise = storeService.save(vm.item).$promise;
             promise.then(function (data) {
                 vm.item = {};
                 console.log('item created', data);
@@ -26,8 +27,8 @@
             });
         }
 
-        function getCompanies() {
-            var promise = companyService.query().$promise;
+        function getStores() {
+            var promise = storeService.query().$promise;
             promise.then(function (data) {
                 console.log('data', data);
                 vm.items = data;
@@ -37,7 +38,7 @@
             });
         }
 
-        socket.on('companies:create', function(data){
+        socket.on('stores:create', function(data){
             console.log('socket:', data);
             vm.items.push(data);
         })

@@ -1,9 +1,10 @@
 module.exports = function (app) {
     var userModel = app.get('models').getCollection('users').model;
+    var companyModel = app.get('models').getCollection('companies').model;
     return {
         login: function (credential, token, callback) {
             console.log('credential server', credential);
-            userModel.update(credential, { token: token, state:'connected' }, function (error,data) {
+            userModel.update(credential, { token: token, state:'connected' }, function (error, data) {
                 if(error) {
                     callback(error);
                 } else {
@@ -11,7 +12,19 @@ module.exports = function (app) {
                         error = { error: 'user/password incorrect'};
                         callback(error);
                     } else {
-                        userModel.findOne(credential, callback);
+                        userModel.findOne(credential, function(error2, user) {
+                          if(error2) {
+                            callback(error2);
+                          } else {
+                            if(user.type == 'company') {
+                              companyModel.findOne({ userId: user._id }, function(err3, company) {
+                                callback(err3, user, company._id);
+                              });
+                            } else {
+                              callback(error2, user);  
+                            }
+                          }
+                        });
                     }
                 }
             });

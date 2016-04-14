@@ -19,6 +19,9 @@ var schema = mongoose.Schema({
     image: {
     	type: String
     },
+    price: {
+        type: Number
+    },
     companyId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'companies'

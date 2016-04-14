@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('app.company', []);
+        .module('app.employee', []);
 })();

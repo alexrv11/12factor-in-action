@@ -32,15 +32,18 @@
         }).state('home.products', {
                 url: "/products",
                 templateUrl: "components/product/products.html",
-                controller: "ProductController"
+                controller: "ProductController",
+                controllerAs: "product"
         }).state('home.stores', {
             url: "/stores",
             templateUrl: "components/store/stores.html",
-            controller: "StoreController"
+            controller: "StoreController",
+            controllerAs: "store"
         }).state('home.employees', {
             url: "/employees",
             templateUrl: "components/employee/employees.html",
-            controller: "EmployeeController"
+            controller: "EmployeeController",
+            controllerAs: "employee"
         }).state('login', {
             url: "/login",
             templateUrl: "app/login/login.html",

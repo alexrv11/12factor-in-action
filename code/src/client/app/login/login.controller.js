@@ -24,10 +24,12 @@
                         $window.sessionStorage.token = data.token;
                         $window.sessionStorage.name = data.name;
                         $window.sessionStorage.type = data.type;
-                        console.log('login', $window.sessionStorage.name);
+                        
                         if(data.type == 'admin') {
                             $location.path('/home/companies');
                         } else if(data.type == 'company' || data.type == 'employee') {
+                            console.log('companyId', data.companyId);
+                            $window.sessionStorage.companyId = data.companyId;
                             $location.path('/home/products');
                         }
                     }
