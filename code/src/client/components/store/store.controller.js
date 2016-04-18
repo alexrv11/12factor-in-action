@@ -5,16 +5,16 @@
         .module('app.store')
         .controller('StoreController', StoreController);
 
-    StoreController.$inject = [ 'storeService', 'socket' ];
+    StoreController.$inject = [ 'storeService', 'socket', '$scope' ];
 
-    function StoreController(storeService, socket) {
+    function StoreController(storeService, socket, $scope) {
         var vm = this;
         vm.item = {};
         vm.items = getStores();
         vm.save = save;
 
         function save() {
-            
+            $scope.storeForm.$setUntouched();
             var promise = storeService.save(vm.item).$promise;
             promise.then(function (data) {
                 vm.item = {};
