@@ -5,15 +5,16 @@
         .module('app.product')
         .controller('ProductController', productController);
 
-    productController.$inject = [ 'productService', 'socket' ];
+    productController.$inject = [ 'productService', 'socket', '$scope' ];
 
-    function productController(productService, socket) {
+    function productController(productService, socket, $scope) {
         var vm = this;
         vm.item = {};
         vm.items = getProducts();
         vm.save = save;
 
         function save() {
+            $scope.productForm.$setUntouched();
             var promise = productService.save(vm.item).$promise;
             promise.then(function (data) {
                 vm.item = {};

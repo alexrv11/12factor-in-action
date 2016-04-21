@@ -5,15 +5,16 @@
         .module('app.employee')
         .controller('EmployeeController', EmployeeController);
 
-    EmployeeController.$inject = [ 'employeeService', 'socket' ];
+    EmployeeController.$inject = [ 'employeeService', 'socket', '$scope' ];
 
-    function EmployeeController(employeeService, socket) {
+    function EmployeeController(employeeService, socket, $scope) {
         var vm = this;
         vm.item = {};
         vm.items = getEmployees();
         vm.save = save;
 
         function save() {
+            $scope.employeeForm.$setUntouched();
             var promise = employeeService.save(vm.item).$promise;
             promise.then(function (data) {
                 vm.item = {};

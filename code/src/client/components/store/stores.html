@@ -1,45 +1,86 @@
-<div class="container-fluid home-content">
+<div class="container-fluid stores-content">
     <h3 class="title-home-content">Tiendas</h3>
-    <form name="storeForm" class="form-inline">
-        <div class="form-group">
-            <label for="name">Nombre:</label>
-            <input type="text" name="name" id="name" class="form-control"
-                   ng-model="store.item.name" placeholder="Nombre Empresa" required>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Registrar tiendas</h3>
         </div>
-        <div class="form-group">
-            <label for="address">Direccion:</label>
-            <input type="text" name="address" id="address" class="form-control"
-                   ng-model="store.item.address" placeholder="Direccion" required>
-        </div>
-        <div class="form-group">
-            <label for="latidude">Latitud:</label>
-            <input type="text" name="latitude" id="latitude" class="form-control"
-                   ng-model="store.item.position.latitude" placeholder="Latitud" required>
-                   <label for="longitud">Longitud:</label>
-            <input type="text" name="longitud" id="longitud" class="form-control"
-                   ng-model="store.item.position.longitude" placeholder="Longitud" required>
-            <button class="btn btn-info">Mapa</button>>
-        </div>
-        
-        <div class="form-group">
-            <button class="btn btn-primary" ng-click="store.save()" ng-disabled="storeForm.$invalid">Register</button>
-        </div>
-    </form>
 
+        <div class="panel-body">
+
+            <form name="storeForm">
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="name"
+                               ng-class="{ 'text-danger': storeForm.name.$touched && !storeForm.name.$valid }">
+                            Nombre:
+                        </label>
+                        <input type="text" name="name" id="name" class="form-control"
+                               ng-model="store.item.name" placeholder="Nombre Empresa" required>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="form-group">
+                        <label for="address"
+                               ng-class="{ 'text-danger': storeForm.address.$touched && !storeForm.address.$valid }">
+                            Direccion:
+                        </label>
+                        <input type="text" name="address" id="address" class="form-control"
+                               ng-model="store.item.address" placeholder="Direccion" required>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-12">
+                    <div class="panel panel-default position-fields">
+                        <div class="panel-body">
+                            <div class="col-xs-12 col-md-5">
+                                <div class="form-group">
+                                    <label for="latitude"
+                                           ng-class="{ 'text-danger': storeForm.latitude.$touched && !storeForm.latitude.$valid }">
+                                        Latitud:
+                                    </label>
+                                    <input type="text" name="latitude" id="latitude" class="form-control"
+                                           ng-model="store.item.position.latitude" placeholder="Latitud" required>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-5">
+                                <div class="form-group">
+                                    <label for="longitud"
+                                           ng-class="{ 'text-danger': storeForm.longitud.$touched && !storeForm.longitud.$valid }">
+                                        Longitud:
+                                    </label>
+                                    <input type="text" name="longitud" id="longitud" class="form-control"
+                                           ng-model="store.item.position.longitude" placeholder="Longitud" required>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-2 map-button text-center">
+                                <button class="btn btn-info">Mapa</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                    <div class="form-group">
+                        <button class="btn btn-primary" ng-click="store.save()" ng-disabled="storeForm.$invalid">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <table class="table table-hover table-bordered">
         <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Direccion</th>
-                <th>Ubicacion</th>
-            </tr>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Ubicacion</th>
+        </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in store.items">
-                <td>{{ item.name }}</td>
-                <td>{{ item.address }}</td>
-                <td>{{ item.position.latitude }} {{ item.position.longitude }}</td>
-            </tr>
+        <tr ng-repeat="item in store.items">
+            <td>{{ item.name }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.position.latitude }} {{ item.position.longitude }}</td>
+        </tr>
         </tbody>
     </table>
 </div>

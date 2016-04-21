@@ -5,7 +5,7 @@
         .module('app.employee')
         .service('employeeService', employeeService);
 
-    employeeService.$inject = [ '$resource', $window, 'BASE_URL', 'COMPANY_URL', 'EMPLOYEE_URL' ];
+    employeeService.$inject = [ '$resource', '$window', 'BASE_URL', 'COMPANY_URL', 'EMPLOYEE_URL' ];
 
     function employeeService($resource, $window, BASE_URL, COMPANY_URL, EMPLOYEE_URL) {
                 var companyId = $window.sessionStorage.companyId;
