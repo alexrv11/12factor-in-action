@@ -8,3 +8,11 @@ document/*.out
 document/icons/
 document/figures/design graphic/
 .idea
+code/client
+code/build
+credentials
+install-environment.txt
+npm-debug.log
+.gitignore~
+
+
