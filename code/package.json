@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "grunt test",
-    "start": "grunt build && cd build && npm install --production && bower install && node index.js"
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "start": "node index.js"
   },
   "repositories": [
     {
@@ -35,6 +36,7 @@
   },
   "dependencies": {
     "body-parser": "~1.5.2",
+    "bower": "^1.7.9",
     "express": "~4.11.0",
     "jsonwebtoken": "^5.7.0",
     "mongoose": "~4.0.0",

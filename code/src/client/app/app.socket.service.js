@@ -2,7 +2,7 @@
     'use strict';
 
     var app = angular.module('feicoApp');
-    var serverBaseUrl = 'http://localhost:9090';
+    var serverBaseUrl = 'https://feico.herokuapp.com/api';
     app.factory('socket', function (socketFactory) {
         var myIoSocket = io.connect(serverBaseUrl);
 
