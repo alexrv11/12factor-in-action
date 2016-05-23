@@ -3,5 +3,5 @@
 
     angular
         .module('feicoApp')
-        .constant('BASE_URL', 'https://feico.herokuapp.com/api');
+        .constant('BASE_URL', 'https://feico2.herokuapp.com/api');
 })();

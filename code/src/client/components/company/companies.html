@@ -22,9 +22,7 @@
                         <label for="pavilion" ng-class="{ 'text-danger': companyForm.pavilion.$touched && !companyForm.pavilion.$valid}">Pabellon:</label>
                         <select type="" name="pavilion" id="pavilion" class="form-control"
                                 ng-model="company.item.pavilion" placeholder="Pabellon" required>
-                            <option>Union Europea</option>
-                            <option>Bolivia</option>
-                            <option>Internacional</option>
+                            <option ng-repeat="stand in company.stands" ng-click="company.selectStand(stand)">{{stand.name}}</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">

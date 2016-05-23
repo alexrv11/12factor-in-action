@@ -1,8 +1,10 @@
 (function () {
     'use strict';
 
-    angular
-        .module('app.company')
-        .constant('COMPANY_URL', '/companies');
+    var appFeico = angular.module('app.company');
+
+    appFeico.constant('COMPANY_URL', '/companies');
+    appFeico.constant('STAND_URL', '/stands');
+
 
 })();
