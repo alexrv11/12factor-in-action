@@ -1,7 +1,0 @@
-{
-  "app": {
-    "src": [
-      "src/client/index.html"
-    ]
-  }
-}
