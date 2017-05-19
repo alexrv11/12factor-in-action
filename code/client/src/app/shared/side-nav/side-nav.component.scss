@@ -1,0 +1,36 @@
+md-sidenav-container {
+   height: 100%;
+}
+md-sidenav {
+  height: 100%;
+  width: 100%;
+  flex: 1;
+  flex-direction: row;
+}
+
+.item-nav {
+  height: 40px;
+  display: flex;
+  box-sizing: content-box;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-nav a {
+  width: 100%;
+  text-align: start;
+  padding-left: 26px;
+  display: flex;
+  align-items: flex-end; 
+}
+
+.item-nav-group {
+  font-size: 12PX;
+  padding: 0 24PX;
+  height: 32PX;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  display: flex;
+  align-items: center;
+  color: rgba(0,0,0,0.50);
+}

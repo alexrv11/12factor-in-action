@@ -1,0 +1,32 @@
+body{
+  height: 100%;
+  background: green;
+  margin: 0;
+}
+.header {
+  height: 64px;
+  width: 100%;
+  background: yellow;
+}
+.container {
+  display: flex;
+  height: calc(100vh - 64px);
+}
+
+.container div {
+  border: 1px #ccc solid;
+}
+
+.sidenav-container {
+  flex: 1;
+  order: 1;
+  flex-basis: 220px;
+  min-width: 200px;
+  max-width: 220px;
+}
+
+.content-container {
+  flex: 2;
+  order: 2;
+  padding: 15px 10px;
+}

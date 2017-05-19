@@ -1,0 +1,33 @@
+<md-sidenav-container>
+    <md-sidenav mode="side" align="left" opened class="mat-elevation-z20">
+        <div class="item-nav">
+          <a [routerLink]="['./orders']" md-button>
+            <md-icon class="md-18|md-24|md-36|md-48">assignment</md-icon>
+            <label>Pedidos</label>
+          </a>
+        </div>
+        <div class="item-nav-group">Transacciones</div>
+        <div class="item-nav">
+          <a [routerLink]="['./frequencies']" md-button>
+            <md-icon class="md-18|md-24|md-36|md-48">dashboard</md-icon>
+            <label>Frecuencias</label>  
+          </a>
+        </div>
+        <div class="item-nav">
+          <a [routerLink]="['./payes']" md-button> 
+            <md-icon class="md-18|md-24|md-36|md-48">store</md-icon>
+            <label>Multas</label>
+          </a>
+        </div>
+        <div class="item-nav-group">Recursos</div>
+        <div class="item-nav">
+          <a [routerLink]="['./motorcycles']" md-button> 
+            <md-icon class="md-18|md-24|md-36|md-48">motorcycle</md-icon>
+            <label>Moto taxis</label>
+          </a>
+        </div>
+    </md-sidenav>
+</md-sidenav-container>
+
+
+

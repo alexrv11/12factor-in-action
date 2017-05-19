@@ -1,0 +1,52 @@
+<form (ngSubmit)="SaveOrder()" #orderForm="ngForm">
+  <md-input-container>
+    <input mdInput placeholder="Nombre cliente" [(ngModel)]="newOrder.clientName" [ngModelOptions]="{standalone: true}">
+  </md-input-container>
+  <md-input-container>
+    <input mdInput placeholder="NIT" [(ngModel)]="newOrder.nit" [ngModelOptions]="{standalone: true}">
+  </md-input-container>
+  <md-input-container>
+    <input mdInput placeholder="Telefono" [(ngModel)]="newOrder.phone" [ngModelOptions]="{standalone: true}">
+  </md-input-container>
+  <md-input-container>
+    <input mdInput placeholder="Ubicacion" [(ngModel)]="newOrder.place" [ngModelOptions]="{standalone: true}">
+  </md-input-container>
+  <md-input-container>
+    <input mdInput placeholder="Descripcion" [(ngModel)]="newOrder.description" [ngModelOptions]="{standalone: true}">
+  </md-input-container>
+  <button type="button" class="btn btn-success" (click)="SaveOrder(); orderForm.reset()">Guardar</button>
+  <button type="button" class="btn btn-default" (click)="orderForm.reset()">Cancelar</button>
+
+</form>
+
+<table>
+  <tr>
+    <th>
+      Cliente
+    </th>
+    <th>
+      Descripcion
+    </th>
+    <th>
+      Ubicacion
+    </th>
+    <th>
+      Estado
+    </th>
+  </tr>
+  <tr *ngFor="let order of orders | async">
+    <td>
+      {{order.clientName}} {{order.nit}}
+    </td>
+    <td>
+      {{order.description}}
+    </td>
+    <td>
+      {{order.place}}  
+    </td>
+    <td>
+      {{order.state}}
+    </td>
+  </tr>
+
+</table>
